@@ -1,0 +1,30 @@
+/*
+  Possible Animations:
+  enter
+  leave
+  appear Must set transitionAppear={true} on animation component
+*/
+
+.order-enter
+	transition all 0.4s
+	transform translateZ(-100%)
+	max-height 0
+	padding 0 !important
+	opacity 0
+	&.order-enter-active
+		max-height 60px
+		padding 2rem 0 !important
+		transform translateZ(0)
+		opacity 1
+		
+.order-leave
+	transition all 0.4s
+	max-height 60px
+	padding 2rem 0 !important
+	transform translateZ(0)
+	opacity 1
+	&.order-leave-active
+		transform translateZ(-120%) 
+		max-height 0
+		padding 0 !important
+		opacity 0
