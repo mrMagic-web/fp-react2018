@@ -1,27 +1,44 @@
 import React from 'react';
+import ProductsList from '../reducers/new_products';
 
 class ProductPage extends React.Component {
-	render(){
-	const selected = this.props.selected; 
-	const imageStyle = {
-		width: '95%',
-		margin: 'auto'
+	constructor(){
+		super();
+		this.backHome = this.backHome.bind(this);
+		this.state = {
+			products: ProductsList
+		}
 	}
-		if(!selected){
-            return (
-                <div>
-                    <p>Please select products that best fit your business</p>
-                    <div>&nbsp;</div>
-                </div>
-            )
-        };
+
+	backHome(){
+		this.context.router.transitionTo(`/`);
+	}
+	render(){
+		const product = this.state.products[this.props.params.productId];
+		const gray = product.color.white ? "white": "" ; 
+		const white = product.color.gray ? "gray": "" ;
 		return (
 			<aside>
-				<h4>{selected.name['pl']}</h4>
-				<img alt={selected.name['pl']} style={imageStyle} src={`http://fastpack.dk/wp-content/uploads/products/${selected.id}.jpg`} />
+
+				<h4>{product.name['pl']}</h4>
+				<img alt={product.name['pl']}  src={`http://fastpack.dk/wp-content/uploads/products/${product.id}.jpg`} />
+				<p>{product.description['pl']}
+					<span className={white}></span> <span className={gray}></span>
+				</p>
+				<ul>
+				{ Object.keys(product.dimensions)
+						.map(key => <li key={key}> {key} {product.dimensions[key]} </li>) 
+				}
+				</ul>
+				<button onClick={() => this.backHome()}>Home</button>
 			</aside>
+
 		)
 	}
+}
+
+ProductPage.contextTypes = {
+	router: React.PropTypes.object
 }
 
 export default ProductPage;

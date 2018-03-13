@@ -1,11 +1,11 @@
 import React from 'react';
 import Order from './Order';
-import productsList from '../reducers/reducer_products';
+import productsList from '../reducers/new_products';
 import categories from '../reducers/reducer_product_categories';
 import Product from './Product';
-import ProductList from './ProductList';
-import ProductPage from './ProductPage';
+import ProductInfo from './ProductInfo';
 import base from '../base';
+import Modal from 'react-responsive-modal';
 
 class App extends React.Component {
 
@@ -15,14 +15,17 @@ class App extends React.Component {
 		this.openProduct = this.openProduct.bind(this); 
 		this.removeFromOrder = this.removeFromOrder.bind(this); 
 		this.openProduct = this.openProduct.bind(this); 
-		this.state = {
-			products: {},
-			order: {},
-			categories: {},
-			selected: '',
-			selectedCategory: {}
-		}
 	}
+	
+	state = {
+		products: {},
+		order: {},
+		categories: {},
+		selected: '',
+		selectedCategory: {},
+		open: false,
+	}
+ 
 	componentWillMount() {
 	
 		//this runs before the app is rendered
@@ -45,10 +48,10 @@ class App extends React.Component {
         	}); 
         }
 
-
     }
     componentWillUnmount(){
     	base.removeBinding(this.ref);
+    	console.log(this.state)
     }
 
     componentWillUpdate(nextProps, nextState) {
@@ -56,7 +59,9 @@ class App extends React.Component {
     }
 
 	openProduct(key) {
-		this.setState({ selected: key });
+
+		this.setState({ selected: key, open: true });
+		// this.context.router.transitionTo(`/product/${key.id}`);
 	}
 
 	addToOrder(key) {
@@ -69,16 +74,17 @@ class App extends React.Component {
 		delete order[key]; //update or add new number of ordered products
 		this.setState({ order }); // update state, ES short for {order: this.order}
 	}
+	 
+	onCloseModal = () => {
+	    this.setState({ open: false });
+	};
 
 	render() {
+		const { open } = this.state;
 		return (
 			<div className="catch-of-the-day">
 				<div className="menu">
 					<ul className="list-of-products">
-					<ProductList 
-						categories={this.state.categories} 
-						products={this.state.products} 
-					/>
 						{ Object.keys(this.state.products)
 						.map(key =>  <Product addToOrder={this.addToOrder}
 										removeFromOrder={this.removeFromOrder} 
@@ -92,16 +98,25 @@ class App extends React.Component {
 					order={this.state.order} 
 					removeFromOrder={this.removeFromOrder}
 				/>
-				<ProductPage 
-					products={this.state.products}
-					selected={this.state.selected}
-				/>
+				<Modal open={open} onClose={this.onCloseModal} little>
+					<ProductInfo 
+						products={this.state.products}
+						selected={this.state.selected}
+						addToOrder={this.addToOrder}
+						removeFromOrder={this.removeFromOrder} 
+					/>
+				 </Modal>
+
 				{/*<Inventory products={this.state.products} 
 					addProduct={this.addProduct} 
 				/> { /* pass addProduct method to the component */}
 			</div>
 		)
 	}
+}
+
+App.contextTypes = {
+  router: React.PropTypes.object
 }
 
 export default App;

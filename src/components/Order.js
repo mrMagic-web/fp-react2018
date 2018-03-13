@@ -7,9 +7,8 @@ class Order extends React.Component {
 		this.renderOrder = this.renderOrder.bind(this);
 	}
 	renderOrder(key) {
-		const prod = this.props.products.filter( (product) => product.id === key );
-		const removeButton = <button onClick={() => this.props.removeFromOrder(prod[0].id)}>&times;</button>
-		return <li key={key}>{prod[0].name['pl']} {removeButton}</li>;
+		const removeButton = <button onClick={() => this.props.removeFromOrder(key)}>&times;</button>
+		return <li key={key}>{key} {removeButton}</li>;
 	}
 	render(){
 		const orderIds = Object.keys(this.props.order);
