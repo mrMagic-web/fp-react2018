@@ -59,7 +59,6 @@ class App extends React.Component {
     }
 
 	openProduct(key) {
-
 		this.setState({ selected: key, open: true });
 		// this.context.router.transitionTo(`/product/${key.id}`);
 	}
@@ -82,22 +81,22 @@ class App extends React.Component {
 	render() {
 		const { open } = this.state;
 		return (
-			<div className="catch-of-the-day">
-				<div className="menu">
-					<ul className="list-of-products">
-						{ Object.keys(this.state.products)
-						.map(key =>  <Product addToOrder={this.addToOrder}
-										removeFromOrder={this.removeFromOrder} 
-										openProduct={this.openProduct}
-										details={this.state.products[key]} key={key} /> )}
-					</ul>
-				</div>
-				<Order 
-					params={this.state.params}
-					products={this.state.products} 
-					order={this.state.order} 
-					removeFromOrder={this.removeFromOrder}
-				/>
+			<div className="wrapper">
+					<div className="menu">
+						<ul className="list-of-products">
+							{ Object.keys(this.state.products)
+							.map(key =>  <Product addToOrder={this.addToOrder}
+											removeFromOrder={this.removeFromOrder} 
+											openProduct={this.openProduct}
+											details={this.state.products[key]} key={key} /> )}
+						</ul>
+					</div>
+					<Order 
+						params={this.state.params}
+						products={this.state.products} 
+						order={this.state.order} 
+						removeFromOrder={this.removeFromOrder}
+					/>
 				<Modal open={open} onClose={this.onCloseModal} little>
 					<ProductInfo 
 						products={this.state.products}

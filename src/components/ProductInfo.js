@@ -20,6 +20,7 @@ class ProductInfo extends React.Component {
 		const white = selected.color.gray ? "gray": "" ; 
 		return (
 			<aside>
+				
 				<h4>{selected.name['pl']}</h4>
 				<img alt={selected.name['pl']} style={imageStyle} src={`http://fastpack.dk/wp-content/uploads/products/${selected.id}.jpg`} />
 				<p>{selected.description['pl']}

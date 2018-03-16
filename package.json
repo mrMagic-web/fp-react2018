@@ -20,7 +20,8 @@
     "react-addons-css-transition-group": "15.3.2",
     "react-dom": "15.3.2",
     "react-responsive-modal": "^2.0.1",
-    "react-router": "4.0.0-alpha.4"
+    "react-router": "4.0.0-alpha.4",
+    "react-tooltip": "^3.4.0"
   },
   "scripts": {
     "start": "react-scripts start",
