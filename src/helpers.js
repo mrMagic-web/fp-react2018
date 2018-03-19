@@ -1,3 +1,2 @@
-export function formatPrice(cents) {
-  return `$${(cents / 100).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}`;
-}
+export const imageUrl = 'http://fastpack.dk/wp-content/uploads/products/';
+export const language = 'en';

@@ -1,5 +1,6 @@
 import React from 'react';
 import ProductsList from '../reducers/new_products';
+import { imageUrl, language } from '../helpers';
 
 class ProductPage extends React.Component {
 	constructor(){
@@ -20,16 +21,16 @@ class ProductPage extends React.Component {
 		return (
 			<aside>
 
-				<h4>{product.name['pl']}</h4>
-				<img alt={product.name['pl']}  src={`http://fastpack.dk/wp-content/uploads/products/${product.id}.jpg`} />
-				<p>{product.description['pl']}
+				<h4>{product.name[language]}</h4>
+				<img alt={product.name[language]}  src={`${imageUrl}${product.id}.jpg`} />
+				<p>{product.description[language]}
 					<span className={white}></span> <span className={gray}></span>
 				</p>
-				<ul>
+				<ul className="productDimensions">
 				{ Object.keys(product.dimensions)
-						.map(key => <li key={key}> {key} {product.dimensions[key]} </li>) 
+						.map(key => <li key={key}> {key} <br/>{product.dimensions[key]} </li>) 
 				}
-				</ul>
+				</ul> 
 				<button onClick={() => this.backHome()}>Home</button>
 			</aside>
 

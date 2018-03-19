@@ -148,8 +148,7 @@ module.exports = {
         dimensions: {
             width: 220,
             length: 270,
-            fold: 75,
-            window: true
+            fold: 75
         }
     },
     baking_bag_folded_md_w: {
@@ -171,8 +170,7 @@ module.exports = {
         dimensions: {
             width: 230,
             length: 360,
-            fold: 75,
-            window: true
+            fold: 75
         }
     },
     baking_bag_folded_lg_w: {
@@ -194,8 +192,7 @@ module.exports = {
         dimensions: {
             width: 260,
             length: 440,
-            fold: 75,
-            window: true
+            fold: 75
         }
     },
     box_bag_180: {
@@ -239,8 +236,7 @@ module.exports = {
         dimensions: {
             width: 180,
             length: 110,
-            height: 250,
-            window: true
+            height: 250
         }
     },
     box_bag_160: {
@@ -284,8 +280,7 @@ module.exports = {
         dimensions: {
             width: 160,
             length: 80,
-            height: 250,
-            window: true
+            height: 250
         }
     },
     box_bag_120: {
@@ -310,7 +305,7 @@ module.exports = {
             height: 230
         }
     },
-    burger_box_sm: {
+    burger_box_sm: { 
         id: 'burger_box_sm',
         name: {
             pl: 'Pudełko burger małe',
@@ -935,6 +930,10 @@ module.exports = {
             white: true,
             gray: true
         },
-        dimensions: {}
+        dimensions: {
+          width: 0,
+          length: 0,
+          height: 0
+        }
     }
 }
