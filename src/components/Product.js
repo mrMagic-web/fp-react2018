@@ -1,5 +1,7 @@
 import React from 'react';
 import { imageUrl, language } from '../helpers';
+import ICONS from '../graphics/icons';
+import Icon from '../graphics/icon';
 
 class Product extends React.Component {
 	
@@ -8,6 +10,7 @@ class Product extends React.Component {
 		this.viewGray = this.viewGray.bind(this);
 		this.viewWhite = this.viewWhite.bind(this);
 		this.openProduct = this.openProduct.bind(this);
+		this.closeProduct = this.closeProduct.bind(this);
 		this.state = {
 			gray: false, 
 			open: false
@@ -22,6 +25,9 @@ class Product extends React.Component {
 	openProduct(){
 		this.setState({ open: true});	
 	}
+	closeProduct(){ 
+		this.setState({ open: false});	
+	}
 	render(){
 		const details = this.props.details;
 		const gray = details.color.gray ? "gray": "" ; 
@@ -33,24 +39,25 @@ class Product extends React.Component {
 		if(this.state.open) {
 			return (
 				<li className="expand">
-					<div className="image">
-						<img alt={details.name[language]} src={`${imageUrl}${details.id}${imageGray}.jpg`} />
-					</div>
-					<div className="description">
-					<h4>{details.name[language]} <div className="colors"><span onClick={this.viewWhite} className={white}></span> <span onClick={this.viewGray} className={gray}></span></div></h4>
-					
-					<p>{details.description[language]}
-					</p>
-					<ul className="dimensions">
-					{ Object.keys(details.dimensions)
-							.map(key => <li key={key}> <b>{key}</b> <br/> <span>{details.dimensions[key]}</span> </li>) 
-					}
-					</ul>
-					<div className="cartButtons">
-						<button className={productAdded} onClick={() => this.props.addToOrder(details.id)}>Add to order</button>
-						<button className={productRemoved} onClick={() => this.props.removeFromOrder(details.id)}>Remove from order</button>
-					</div>
-					</div>
+						<div onClick={this.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
+						<div className="image">
+							<img alt={details.name[language]} src={`${imageUrl}${details.id}${imageGray}.jpg`} />
+						</div>
+						<div className="description">
+						<h4>{details.name[language]} <div className="colors"><span onClick={this.viewWhite} className={white}></span> <span onClick={this.viewGray} className={gray}></span></div></h4>
+						
+						<p>{details.description[language]}
+						</p>
+						<ul className="dimensions">
+						{ Object.keys(details.dimensions)
+								.map(key => <li key={key}> <b>{key}</b> <br/> <span>{details.dimensions[key]}</span> </li>) 
+						}
+						</ul>
+						<div className="cartButtons">
+							<button className={productAdded} onClick={() => this.props.addToOrder(details.id)}>Add to order</button>
+							<button className={productRemoved} onClick={() => this.props.removeFromOrder(details.id)}>Remove from order</button>
+						</div>
+						</div>
 				</li>
 			)
 		}

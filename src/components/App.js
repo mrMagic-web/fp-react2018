@@ -1,7 +1,8 @@
 import React from 'react';
 import Order from './Order';
+import CategorySelector from './CategorySelector';
 import productsList from '../reducers/new_products';
-import categories from '../reducers/reducer_product_categories';
+import categories from '../reducers/product_categories';
 import Product from './Product';
 import base from '../base';
 
@@ -11,15 +12,12 @@ class App extends React.Component {
 		super(); // we can't use this until we call super()
 		this.addToOrder = this.addToOrder.bind(this); 
 		this.removeFromOrder = this.removeFromOrder.bind(this); 
-		// this.openProduct = this.openProduct.bind(this); 
-		// this.openProduct = this.openProduct.bind(this); 
 	}
 	
 	state = {
 		products: {},
 		order: {},
 		categories: {},
-		// selected: '',
 		selectedCategory: {},
 		added: {}
 	}
@@ -73,21 +71,18 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="wrapper">
-					<div className="menu">
-						<ul className="products">
-							{ Object.keys(this.state.products).map(key =>  
-								<Product open={this.state.open} 
-								addToOrder={this.addToOrder} 
-								added={this.state.added} 
-								removeFromOrder={this.removeFromOrder}  
-								details={this.state.products[key]} key={key} /> )}
-						</ul>
-					</div>
-					<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder}/>
-
-				{/*<Inventory products={this.state.products} 
-					addProduct={this.addProduct} 
-				/> { /* pass addProduct method to the component */}
+				<CategorySelector categories={this.state.categories}/>
+				<div className="menu">
+					<ul className="products">
+						{ Object.keys(this.state.products).map(key =>  
+							<Product open={this.state.open} 
+							addToOrder={this.addToOrder} 
+							added={this.state.added} 
+							removeFromOrder={this.removeFromOrder}  
+							details={this.state.products[key]} key={key} /> )}
+					</ul>
+				</div>
+				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder}/>
 			</div>
 		)
 	}
