@@ -16,6 +16,7 @@ class Product extends React.Component {
 			gray: false, 
 			open: false
 		}
+		this.baseState = this.state;
 	}
 	viewGray() {
 		this.setState({ gray: true});
@@ -24,6 +25,7 @@ class Product extends React.Component {
 		this.setState({ gray: false});
 	}
 	openProduct(){
+		this.setState(this.baseState);
 		this.setState({ open: true});
 		ReactDOM.findDOMNode(this).scrollIntoView({behavior: "smooth", block: "start"});
 	}

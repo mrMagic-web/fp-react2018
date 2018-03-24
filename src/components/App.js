@@ -6,6 +6,8 @@ import categories from '../reducers/product_categories';
 import Product from './Product';
 import base from '../base';
 
+
+
 class App extends React.Component {
 
 	constructor() {
@@ -19,7 +21,7 @@ class App extends React.Component {
 		products: {},
 		order: {},
 		categories: {},
-		selectedCategory: {},
+		selectedCat: 'all',
 		added: {}
 	}
  
@@ -50,13 +52,16 @@ class App extends React.Component {
     componentWillUnmount(){
     	base.removeBinding(this.ref);
     }
-
     componentWillUpdate(nextProps, nextState) {
     	localStorage.setItem(`order-${this.props.params.productId}`, JSON.stringify(nextState.order)); // when adding to local storege we cannot use object. we turn it into string
     	localStorage.setItem(`added-${this.props.params.productId}`, JSON.stringify(nextState.added)); // when adding to local storege we cannot use object. we turn it into string
     }
     selectCategory(key) {
-    	console.log(key);
+    	//convert array of product into object
+    	const categoryProducts = this.state.categories[key].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
+	    const cats = key === 'all' ? productsList : categoryProducts;
+    	// this.setState({products});
+    	console.log(cats)
     }
 	addToOrder(key) {
 		const order = {...this.state.order}, added = {...this.state.added}; // take a copy of own state
@@ -78,12 +83,15 @@ class App extends React.Component {
 								  selectCategory={this.selectCategory}/>
 				<div className="menu">
 					<ul className="products">
+						{console.log(this.state.products)}
 						{ Object.keys(this.state.products).map(key =>  
 							<Product open={this.state.open} 
 							addToOrder={this.addToOrder} 
 							added={this.state.added} 
 							removeFromOrder={this.removeFromOrder}  
 							details={this.state.products[key]} key={key} /> )}
+						}
+						
 					</ul>
 				</div>
 				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder}/>

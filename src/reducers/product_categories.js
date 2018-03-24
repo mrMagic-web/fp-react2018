@@ -1,4 +1,26 @@
 module.exports = {
+    all: {
+        name: {
+          pl: 'Wszystkie',
+          en: 'All',
+          dk: 'All'
+        },
+        portfolio: [
+          '157_candycastle',
+          '157_dst',
+          '157_okno_blandselvslik',
+          '157_okno_bonbons',
+          '157_sliksafari',
+          '157_sweetcity',
+          '180_faetter',
+          '180_fluffy',
+          '180_pistachia',
+          '180_sukker',
+          'duzatorba_candymegastore',
+          'duzatorba_elina'
+        ],
+        productList: []
+      },
     foodtruck: {
         name: {
           pl: 'Foodtruck',
