@@ -12,6 +12,7 @@ class App extends React.Component {
 		super(); // we can't use this until we call super()
 		this.addToOrder = this.addToOrder.bind(this); 
 		this.removeFromOrder = this.removeFromOrder.bind(this); 
+		this.selectCategory = this.selectCategory.bind(this); 
 	}
 	
 	state = {
@@ -54,7 +55,9 @@ class App extends React.Component {
     	localStorage.setItem(`order-${this.props.params.productId}`, JSON.stringify(nextState.order)); // when adding to local storege we cannot use object. we turn it into string
     	localStorage.setItem(`added-${this.props.params.productId}`, JSON.stringify(nextState.added)); // when adding to local storege we cannot use object. we turn it into string
     }
-
+    selectCategory(key) {
+    	console.log(key);
+    }
 	addToOrder(key) {
 		const order = {...this.state.order}, added = {...this.state.added}; // take a copy of own state
  		added[key] = true;
@@ -71,7 +74,8 @@ class App extends React.Component {
 	render() {
 		return (
 			<div className="wrapper">
-				<CategorySelector categories={this.state.categories}/>
+				<CategorySelector categories={this.state.categories} 
+								  selectCategory={this.selectCategory}/>
 				<div className="menu">
 					<ul className="products">
 						{ Object.keys(this.state.products).map(key =>  

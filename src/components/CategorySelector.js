@@ -3,23 +3,19 @@ import {  language } from '../helpers';
 
 class CategorySelector extends React.Component {
 
-	constructor(){
-		super();
-		this.showCategories = this.showCategories.bind(this);
-	}
-	showCategories() {
-		const cat = this.props.cat;
-		Object.keys(cat).map(function (key) {
-		 return `<li key=${key}>${cat[key].name[language]}</li>`	
-		} ) 
-	} 
-
 	render(){
-		
+		const categories = this.props.categories;
 		return( 
-			<ul>
-				{this.showCategories}
-			</ul>
+			<div className="category-selector">
+				<h3>Select Category</h3>
+				<ul>
+					{ Object.keys(categories).map((key) => 
+						<li key={key} 
+						onClick={() => this.props.selectCategory(key)} > 
+						{categories[key].name[language]}
+						</li>) }
+				</ul>
+			</div>
 		)
 	}
 }

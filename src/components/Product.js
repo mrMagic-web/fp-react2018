@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM  from 'react-dom';
 import { imageUrl, language } from '../helpers';
 import ICONS from '../graphics/icons';
 import Icon from '../graphics/icon';
@@ -23,7 +24,8 @@ class Product extends React.Component {
 		this.setState({ gray: false});
 	}
 	openProduct(){
-		this.setState({ open: true});	
+		this.setState({ open: true});
+		ReactDOM.findDOMNode(this).scrollIntoView({behavior: "smooth", block: "start"});
 	}
 	closeProduct(){ 
 		this.setState({ open: false});	

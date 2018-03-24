@@ -1,27 +1,14 @@
 // Import all partials
+@require '_variables.styl'
 @require './_*.styl'
     
 .wrapper
-  display flex
   max-width 1280px
   margin 0 auto
   position relative
   width 100%
   padding 2rem
   background white
-
-// Store Selector
-.store-selector
-  background white
-  max-width 500px
-  margin 50px auto
-  padding 2rem
-  border 2px solid black
-  input, button
-    width 100%
-    &[type="text"]
-      text-align center
-      font-size 3rem
 
 .gray, .white 
   width 32px 
@@ -38,3 +25,8 @@
 .gray 
   background-image url('http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg')
 
+svg
+  stroke black
+  fill black
+  display: block;
+  position: absolute;

@@ -313,6 +313,13 @@ ul.order li button {
   -ms-flex-direction: row;
       flex-direction: row;
 }
+.products .expand .icon-close {
+  position: absolute;
+  z-index: 2;
+  width: 20px;
+  top: 15px;
+  right: 15px;
+}
 .products .expand .image {
   width: 40%;
   padding-right: 30px;
@@ -461,30 +468,12 @@ h4 {
   font-size: 1.4rem;
 }
 .wrapper {
-  display: -ms-flexbox;
-  display: flex;
   max-width: 1280px;
   margin: 0 auto;
   position: relative;
   width: 100%;
   padding: 2rem;
   background: #fff;
-}
-.store-selector {
-  background: #fff;
-  max-width: 500px;
-  margin: 50px auto;
-  padding: 2rem;
-  border: 2px solid #404040;
-}
-.store-selector input,
-.store-selector button {
-  width: 100%;
-}
-.store-selector input[type="text"],
-.store-selector button[type="text"] {
-  text-align: center;
-  font-size: 3rem;
 }
 .gray,
 .white {
@@ -503,4 +492,10 @@ h4 {
 }
 .gray {
   background-image: url("http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg");
+}
+svg {
+  stroke: #404040;
+  fill: #404040;
+  display: block;
+  position: absolute;
 }
