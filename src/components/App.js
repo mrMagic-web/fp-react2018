@@ -5,7 +5,7 @@ import productsList from '../reducers/new_products';
 import categories from '../reducers/product_categories';
 import Product from './Product';
 import base from '../base';
-
+import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 class App extends React.Component {
@@ -34,10 +34,13 @@ class App extends React.Component {
         });
         //check if there is any order in localStorage
         const localStorageRef = localStorage.getItem(`order-${this.props.params.productId}`);
-        
+        const categorySelected = categories[this.props.params.selectedCat];
+        const validCategory = categorySelected ?  categorySelected.id : "all";
+
     	this.setState({
 			products: productsList,
-			categories: categories
+			categories: categories,
+			selectedCat: validCategory
 		});
 		
 		//update App component's order state
@@ -57,11 +60,8 @@ class App extends React.Component {
     	localStorage.setItem(`added-${this.props.params.productId}`, JSON.stringify(nextState.added)); // when adding to local storege we cannot use object. we turn it into string
     }
     selectCategory(key) {
-    	//convert array of product into object
-    	const categoryProducts = this.state.categories[key].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
-	    const cats = key === 'all' ? productsList : categoryProducts;
-    	// this.setState({products});
-    	console.log(cats)
+    	this.setState({selectedCat: key});
+    	this.context.router.transitionTo(`/${key}`);
     }
 	addToOrder(key) {
 		const order = {...this.state.order}, added = {...this.state.added}; // take a copy of own state
@@ -77,22 +77,22 @@ class App extends React.Component {
 	}
 
 	render() {
+
+		const categoryProducts =  this.state.categories[this.state.selectedCat].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
+	    const cats = this.state.selectedCat === 'all' ? productsList : categoryProducts;
 		return (
 			<div className="wrapper">
 				<CategorySelector categories={this.state.categories} 
 								  selectCategory={this.selectCategory}/>
 				<div className="menu">
-					<ul className="products">
-						{console.log(this.state.products)}
-						{ Object.keys(this.state.products).map(key =>  
+					<CSSTransitionGroup className="products selection"component="ul" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
+						{ Object.keys(cats).map(key =>  
 							<Product open={this.state.open} 
 							addToOrder={this.addToOrder} 
 							added={this.state.added} 
 							removeFromOrder={this.removeFromOrder}  
 							details={this.state.products[key]} key={key} /> )}
-						}
-						
-					</ul>
+					</CSSTransitionGroup>
 				</div>
 				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder}/>
 			</div>

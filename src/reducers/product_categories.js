@@ -1,5 +1,6 @@
 module.exports = {
     all: {
+      id: 'all',
         name: {
           pl: 'Wszystkie',
           en: 'All',
@@ -22,6 +23,7 @@ module.exports = {
         productList: []
       },
     foodtruck: {
+      id: 'foodtruck',
         name: {
           pl: 'Foodtruck',
           en: 'Foodtruck',
@@ -83,6 +85,7 @@ module.exports = {
         ]
       },
       restaurant: {
+        id: 'restaurant',
         name: {
           pl: 'Restauracja',
           en: 'Restaurant',
@@ -131,6 +134,7 @@ module.exports = {
         ]
       },
       candy_store: {
+        id: 'candy_store',
         name: {
           pl: 'Sklep z cukierkami',
           en: 'Candy Store',
@@ -177,6 +181,7 @@ module.exports = {
         ]
       },
       cafeteria: {
+        id: 'cafeteria',
         name: {
           pl: 'Kawiarnia',
           en: 'Cafeteria',
@@ -225,6 +230,7 @@ module.exports = {
         ]
       },
       bakery: {
+        id: 'bakery',
         name: {
           pl: 'Piekarnia',
           en: 'Bakery',
@@ -262,21 +268,22 @@ module.exports = {
           'duzatorba_elina'
         ],
         productList: [
-          'baking_bag_sm',
-          'baking_bag_md',
-          'baking_bag_lg',
           'baking_bag_folded_sm',
           'baking_bag_folded_md',
           'baking_bag_folded_lg',
           'baking_bag_folded_sm_w',
           'baking_bag_folded_md_w',
           'baking_bag_folded_lg_w',
+          'baking_bag_sm',
+          'baking_bag_md',
+          'baking_bag_lg',
           'napkin_1',
           'napkin_2',
           'napkin_3'
         ]
       },
       pizzeria: {
+        id: 'pizzeria',
         name: {
           pl: 'Pizzeria',
           en: 'Pizzeria',
