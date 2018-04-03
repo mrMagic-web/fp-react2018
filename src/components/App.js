@@ -83,7 +83,9 @@ class App extends React.Component {
 		return (
 			<div className="wrapper">
 				<CategorySelector categories={this.state.categories} 
-								  selectCategory={this.selectCategory}/>
+								  selectCategory={this.selectCategory}
+								  selectedCat={this.state.selectedCat}
+								  />
 				<div className="menu">
 					<CSSTransitionGroup className="products selection"component="ul" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
 						{ Object.keys(cats).map(key =>  

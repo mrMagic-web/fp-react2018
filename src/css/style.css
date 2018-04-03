@@ -1,3 +1,26 @@
+.selector {
+  position: relative;
+  font-size: 1.25rem;
+}
+.selector ul {
+  list-style: none;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.selector ul li {
+  margin: 5px;
+  cursor: pointer;
+  color: #999;
+}
+.selector ul li.selected {
+  text-decoration: underline;
+  color: #404040;
+  cursor: default;
+}
 .order-enter {
   transition: all 0.4s;
   transform: translateZ(-120%);
@@ -434,6 +457,24 @@ button.success:after,
 input[type=submit].success:after {
   background: #008000;
 }
+.gray,
+.white {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #d3d3d3;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  margin: 0 1px;
+}
+.gray:hover,
+.white:hover {
+  box-shadow: 0px 0px 2px 0px rgba(50,50,50,0.5);
+}
+.gray {
+  background-image: url("http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg");
+}
 html {
   font-size: 68%;
 }
@@ -474,24 +515,6 @@ h4 {
   width: 100%;
   padding: 2rem;
   background: #fff;
-}
-.gray,
-.white {
-  width: 32px;
-  height: 32px;
-  border: 1px solid #d3d3d3;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  margin: 0 1px;
-}
-.gray:hover,
-.white:hover {
-  box-shadow: 0px 0px 2px 0px rgba(50,50,50,0.5);
-}
-.gray {
-  background-image: url("http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg");
 }
 svg {
   stroke: #404040;
