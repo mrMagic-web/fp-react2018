@@ -22,7 +22,9 @@ class App extends React.Component {
 		order: {},
 		categories: {},
 		selectedCat: 'all',
-		added: {}
+		added: {},
+		language: 'en',
+		openProd: true
 	}
  
 	componentWillMount() {
@@ -80,23 +82,25 @@ class App extends React.Component {
 
 		const categoryProducts =  this.state.categories[this.state.selectedCat].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
 	    const cats = this.state.selectedCat === 'all' ? productsList : categoryProducts;
+		
 		return (
 			<div className="wrapper">
 				<CategorySelector categories={this.state.categories} 
 								  selectCategory={this.selectCategory}
 								  selectedCat={this.state.selectedCat}
+								  language={this.state.language}
 								  />
 				<div className="menu">
 					<CSSTransitionGroup className="products selection"component="ul" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
 						{ Object.keys(cats).map(key =>  
 							<Product open={this.state.open} 
 							addToOrder={this.addToOrder} 
-							added={this.state.added} 
+							added={this.state.added} language={this.state.language}
 							removeFromOrder={this.removeFromOrder}  
 							details={this.state.products[key]} key={key} /> )}
 					</CSSTransitionGroup>
 				</div>
-				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder}/>
+				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} language={this.state.language}/>
 			</div>
 		)
 	}

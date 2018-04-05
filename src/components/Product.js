@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM  from 'react-dom';
-import { imageUrl, language } from '../helpers';
-import ICONS from '../graphics/icons';
-import Icon from '../graphics/icon';
+import { imageUrl} from '../helpers';
+import ProductPage from './ProductPage';
 
 class Product extends React.Component {
 	
@@ -39,31 +38,20 @@ class Product extends React.Component {
 		const imageGray = this.state.gray ? "_gray": "";
 		const productAdded = this.props.added[details.id] ? 'disabled' : '';
 		const productRemoved = this.props.added[details.id] ? '' : 'disabled';
+		const language = this.props.language;
 
 		if(this.state.open) {
-			return (
-				<li className="expand">
-						<div onClick={this.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
-						<div className="image">
-							<img alt={details.name[language]} src={`${imageUrl}${details.id}${imageGray}.jpg`} />
-						</div>
-						<div className="description">
-						<h4>{details.name[language]} <div className="colors"><span onClick={this.viewWhite} className={white}></span> <span onClick={this.viewGray} className={gray}></span></div></h4>
-						
-						<p>{details.description[language]}
-						</p>
-						<ul className="dimensions">
-						{ Object.keys(details.dimensions)
-								.map(key => <li key={key}> <b>{key}</b> <br/> <span>{details.dimensions[key]}</span> </li>) 
-						}
-						</ul>
-						<div className="cartButtons">
-							<button className={productAdded} onClick={() => this.props.addToOrder(details.id)}>Add to order</button>
-							<button className={productRemoved} onClick={() => this.props.removeFromOrder(details.id)}>Remove from order</button>
-						</div>
-						</div>
-				</li>
-			)
+			return <ProductPage 
+					details={this.props.details}
+					closeProduct={this.closeProduct}
+					addToOrder={this.props.addToOrder}
+					removeFromOrder={this.props.removeFromOrder}
+					viewWhite={this.viewWhite} viewGray={this.viewGray}
+					language={this.props.language}
+					imageGray={imageGray}
+					productAdded={productAdded} productRemoved={productRemoved}
+				/>
+			
 		}
 
 		return (

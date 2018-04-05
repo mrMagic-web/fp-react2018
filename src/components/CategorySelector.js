@@ -1,8 +1,4 @@
 import React from 'react';
-import {  language } from '../helpers';
-
-import ICONS from '../graphics/icons';
-import Icon from '../graphics/icon';
 
 class CategorySelector extends React.Component {
 	testSelected(key){
@@ -10,6 +6,7 @@ class CategorySelector extends React.Component {
 	}
 
 	render(){
+		const language = this.props.language;
 		const categories = this.props.categories;
 		return ( 
 			<div className="selector">

@@ -1,37 +1,46 @@
 import React from 'react';
 import ProductsList from '../reducers/new_products';
-import { imageUrl, language } from '../helpers';
+import { imageUrl } from '../helpers';
+import ICONS from '../graphics/icons';
+import Icon from '../graphics/icon';
 
 class ProductPage extends React.Component {
 	constructor(){
 		super();
-		this.backHome = this.backHome.bind(this);
 		this.state = {
 			products: ProductsList
 		}
 	}
 
-	backHome(){
-		this.context.router.transitionTo(`/`);
-	}
 	render(){
-		const product = this.state.products[this.props.params.productId];
-		const gray = product.color.white ? "white": "" ; 
-		const white = product.color.gray ? "gray": "" ;
+		const product = this.props.details;
+		const white = product.color.white ? "white": "" ; 
+		const gray = product.color.gray ? "gray": "" ;
+		const imageGray = this.props.imageGray;
+		const language = this.props.language;
 		return (
 			<aside>
-
-				<h4>{product.name[language]}</h4>
-				<img alt={product.name[language]}  src={`${imageUrl}${product.id}.jpg`} />
-				<p>{product.description[language]}
-					<span className={white}></span> <span className={gray}></span>
-				</p>
-				<ul className="productDimensions">
-				{ Object.keys(product.dimensions)
-						.map(key => <li key={key}> {key} <br/>{product.dimensions[key]} </li>) 
-				}
-				</ul> 
-				<button onClick={() => this.backHome()}>Home</button>
+				<li className="expand">
+						<div onClick={this.props.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
+						<div className="image">
+							<img alt={product.name[language]} src={`${imageUrl}${product.id}${imageGray}.jpg`} />
+						</div>
+						<div className="description">
+						<h4>{product.name[language]} <div className="colors"><span onClick={this.props.viewWhite} className={white}></span> <span onClick={this.props.viewGray} className={gray}></span></div></h4>
+						
+						<p>{product.description[language]}
+						</p>
+						<ul className="dimensions">
+						{ Object.keys(product.dimensions)
+								.map(key => <li key={key}> <b>{key}</b> <br/> <span>{product.dimensions[key]}</span> </li>) 
+						}
+						</ul>
+						<div className="cartButtons">
+							<button className={this.props.productAdded} onClick={() => this.props.addToOrder(product.id)}>Add to order</button>
+							<button className={this.props.productRemoved} onClick={() => this.props.removeFromOrder(product.id)}>Remove from order</button>
+						</div>
+						</div>
+				</li>
 			</aside>
 
 		)
