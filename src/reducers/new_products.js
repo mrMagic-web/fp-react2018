@@ -4,7 +4,7 @@ module.exports = {
         name: {
             pl: 'Torebka piekarnicza płaska mała',
             en: 'Flat bakery bag small',
-            dk: 'Flad bagage taske lille'
+            dk: 'Pose, mellem,flad'
         },
         description: {
             pl: 'Torebka piekarnicza płaska mała. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -25,8 +25,9 @@ module.exports = {
         name: {
             pl: 'Torebka piekarnicza płaska średnia',
             en: 'Flat bakery bag medium',
-            dk: 'Flad bagage taske medium'
+            dk: 'Pose, stor,flad'
         },
+
         description: {
             pl: 'Torebka piekarnicza płaska średnia. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
             en: 'Flat bakery bag medium. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -46,7 +47,7 @@ module.exports = {
         name: {
             pl: 'Torebka piekarnicza płaska duża',
             en: 'Flat bakery bag large',
-            dk: 'Flad bagage taske stor'
+            dk: 'Bagerpose, stor,flad'
         },
         description: {
             pl: 'Torebka piekarnicza płaska duża. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -66,9 +67,9 @@ module.exports = {
     baking_bag_folded_sm: {
         id: 'baking_bag_folded_sm',
         name: {
-            pl: 'Torebka piekarnicza fałdowa mała',
+            pl: 'Torebka fałdowa piekarnicza mała',
             en: 'Folded bakery bag small',
-            dk: 'Foldet bagage taske lille'
+            dk: 'Bagerpose med fals, lille'
         },
         description: {
             pl: 'Torebka piekarnicza płaska mała. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -88,9 +89,9 @@ module.exports = {
     baking_bag_folded_md: {
         id: 'baking_bag_folded_md',
         name: {
-            pl: 'Torebka piekarnicza fałdowa średnia',
+            pl: 'Torebka fałdowa piekarnicza średnia',
             en: 'Folded bakery bag medium',
-            dk: 'Foldet bagage taske medium'
+            dk: 'Bagerpose med fals, mellem'
         },
         description: {
             pl: 'Torebka piekarnicza fałdowa średnia. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -110,9 +111,9 @@ module.exports = {
     baking_bag_folded_lg: {
         id: 'baking_bag_folded_lg',
         name: {
-            pl: 'Torebka piekarnicza fałdowa duża',
+            pl: 'Torebka fałdowa piekarnicza duża',
             en: 'Folded bakery bag large',
-            dk: 'Foldet bagage taske stor'
+            dk: 'Bagerpose med fals, stor'
         },
         description: {
             pl: 'Torebka piekarnicza fałdowa duża. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -132,9 +133,9 @@ module.exports = {
     baking_bag_folded_sm_w: {
         id: 'baking_bag_folded_sm_w',
         name: {
-            pl: 'Torebka piekarnicza fałdowa mała z oknem',
+            pl: 'Torebka fałdowa piekarnicza mała z oknem',
             en: 'Folded bakery bag small with window',
-            dk: 'Foldet bagage taske lille med vindue'
+            dk: 'Bagerpose med fals og vindue, lille'
         },
         description: {
             pl: 'Torebka piekarnicza płaska mała z oknem. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -154,9 +155,9 @@ module.exports = {
     baking_bag_folded_md_w: {
         id: 'baking_bag_folded_md_w',
         name: {
-            pl: 'Torebka piekarnicza fałdowa średnia z oknem',
+            pl: 'Torebka fałdowa piekarnicza średnia z oknem',
             en: 'Folded bakery bag medium with window',
-            dk: 'Foldet bagage taske medium med vindue'
+            dk: 'Bagerpose med fals og vindue, mellem'
         },
         description: {
             pl: 'Torebka piekarnicza fałdowa średnia z oknem. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -176,9 +177,9 @@ module.exports = {
     baking_bag_folded_lg_w: {
         id: 'baking_bag_folded_lg_w',
         name: {
-            pl: 'Torebka piekarnicza fałdowa duża z oknem',
+            pl: 'Torebka fałdowa piekarnicza duża z oknem',
             en: 'Folded bakery bag large with window',
-            dk: 'Foldet bagage taske stor med vindue'
+            dk: 'Bagerpose med fals og vindue, stor'
         },
         description: {
             pl: 'Torebka piekarnicza fałdowa duża z oknem. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -200,7 +201,7 @@ module.exports = {
         name: {
             pl: 'Torebka klockowa 180mm',
             en: 'Box bag 180mm',
-            dk: 'Sko taske 180mm'
+            dk: 'Klodsbundspose 180mm'
         },
         description: {
             pl: 'Torebka ta jest wykonana z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -222,7 +223,7 @@ module.exports = {
         name: {
             pl: 'Torebka klockowa z oknem 180mm',
             en: 'Box bag with window 180mm',
-            dk: 'Sko taske med vindue 180mm'
+            dk: 'Klodsbundspose m. vindue 180mm'
         },
         description: {
             pl: 'Torebka klockowa z oknem 180mm. Torebka ta jest wykonana z papieru o grubości x g/m2. Dzięki oknu twoi klieci będą mogli docenić piękno cukierków zakupionych w Twoim sklepie. Torba jest w stanie wytrzymać wagę do 1,2kg cukierków.',
@@ -244,7 +245,7 @@ module.exports = {
         name: {
             pl: 'Torebka klockowa 160mm',
             en: 'Box bag 160mm',
-            dk: 'Sko taske 160mm'
+            dk: 'Klodsbundspose 160mm'
         },
         description: {
             pl: 'Torebka ta jest wykonana z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -266,7 +267,7 @@ module.exports = {
         name: {
             pl: 'Torebka klockowa z oknem 160mm',
             en: 'Box bag with window 160mm',
-            dk: 'Sko taske med vindue 160mm'
+            dk: 'Klodsbundspose m. vindue 160mm'
         },
         description: {
             pl: 'Torebka klockowa z oknem 160mm. Torebka ta jest wykonana z papieru o grubości x g/m2. Dzięki oknu twoi klieci będą mogli docenić piękno cukierków zakupionych w Twoim sklepie. Torba jest w stanie wytrzymać wagę do 1,2kg cukierków.',
@@ -288,7 +289,7 @@ module.exports = {
         name: {
             pl: 'Torebka klockowa 120mm',
             en: 'Box bag 120mm',
-            dk: 'Sko taske 120mm'
+            dk: 'Klodsbundspose 120mm'
         },
         description: {
             pl: 'Torebka klockowa 120mm. Torebka ta jest wykonana z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -305,12 +306,12 @@ module.exports = {
             height: 230
         }
     },
-    burger_box_sm: { 
+    burger_box_sm: {
         id: 'burger_box_sm',
         name: {
             pl: 'Pudełko burger małe',
             en: 'Burger box small',
-            dk: 'En kasse med burger lille'
+            dk: 'Burger boks lille'
         },
         description: {
             pl: 'Pudełko burger małe. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -332,7 +333,7 @@ module.exports = {
         name: {
             pl: 'Pudełko burger średnie',
             en: 'Burger box medium',
-            dk: 'En kasse med burger medium'
+            dk: 'Burger boks mellem'
         },
         description: {
             pl: 'Pudełko burger małe. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -354,7 +355,7 @@ module.exports = {
         name: {
             pl: 'Pudełko burger duże',
             en: 'Burger box large',
-            dk: 'En kasse med burger stor'
+            dk: 'Burger boks stor'
         },
         description: {
             pl: 'Pudełko burger duże. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -367,7 +368,9 @@ module.exports = {
         },
         dimensions: {
             width: 150,
-            length: 150,
+            wength: 150,
+            bottomWidth: 110,
+            bottomLength: 120,
             height: 80
         }
     },
@@ -397,7 +400,7 @@ module.exports = {
         name: {
             pl: 'Pudełko na calzone',
             en: 'Calzone box',
-            dk: 'Boks på calzone'
+            dk: 'Calezone boks'
         },
         description: {
             pl: 'Pudełko na pizze. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -419,7 +422,7 @@ module.exports = {
         name: {
             pl: 'Kubek na frytki',
             en: 'Chips box',
-            dk: 'Krus til chips'
+            dk: 'Pommes frites bægre'
         },
         description: {
             pl: 'Kubek na frytki 6,5x6,5 h 11 wykonany z papieru o grubości x g/m2.',
@@ -431,8 +434,10 @@ module.exports = {
             gray: true
         },
         dimensions: {
-            width: 65,
-            length: 65,
+            topWidth: 90,
+            topLength: 90,
+            bottomWidth: 65,
+            bottomLength: 65,
             height: 110
         }
     },
@@ -441,7 +446,7 @@ module.exports = {
         name: {
             pl: 'Tacka na frytki',
             en: 'Chips tray',
-            dk: 'En bakke af chips'
+            dk: 'Pommes frites bakke'
         },
         description: {
             pl: 'Tacka na frytki. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -453,8 +458,10 @@ module.exports = {
             gray: true
         },
         dimensions: {
-            width: 140,
-            length: 70,
+            topWidth: 80,
+            topLength: 160,
+            bottomWidth: 70,
+            bottomLength: 140,
             height: 36
         }
     },
@@ -463,7 +470,7 @@ module.exports = {
         name: {
             pl: 'Kubek z przykrywką średni espresso 100ml',
             en: 'Espresso cup small with a cover 100ml',
-            dk: 'Krus med lille espresso cover 100ml'
+            dk: 'Espresso kop med låg'
         },
         description: {
             pl: 'Kubek z przykrywką mały espresso 100ml. Kubek z przykrywką mały espresso wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -472,20 +479,20 @@ module.exports = {
         },
         color: {
             white: true,
-            gray: false
+            gray: true
         },
         dimensions: {
-            width: 65,
-            length: 65,
-            height: 62
+            topDiameter: 62,
+            bottomDiameter: 45,
+            height: 65
         }
     },
     coffee_cup_md: {
         id: 'coffee_cup_md',
         name: {
             pl: 'Kubek z przykrywką mały espresso 300ml',
-            en: 'Espresso cup medium with a cover 300ml',
-            dk: 'Krus med medium espresso cover 300ml'
+            en: 'Coffee cup medium with a cover 300ml',
+            dk: 'Kaffekop lille med låg'
         },
         description: {
             pl: 'Kubek z przykrywką średni espresso 300ml. Kubek z przykrywką mały espresso wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -494,20 +501,20 @@ module.exports = {
         },
         color: {
             white: true,
-            gray: false
+            gray: true
         },
         dimensions: {
-            width: 85,
-            length: 85,
+            topDiameter: 85,
+            bottomDiameter: 60,
             height: 105
         }
     },
     coffee_cup_lg: {
         id: 'coffee_cup_lg',
         name: {
-            pl: 'Kubek z przykrywką mały espresso 400ml',
-            en: 'Espresso cup medium with a cover 400ml',
-            dk: 'Krus med medium espresso cover 400ml'
+            pl: 'Kubek z przykrywką duży 400ml',
+            en: 'Coffee cup large with a cover 400ml',
+            dk: 'Kaffekop stor med låg'
         },
         description: {
             pl: 'Kubek z przykrywką średni espresso 400ml. Kubek z przykrywką mały espresso wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -516,20 +523,20 @@ module.exports = {
         },
         color: {
             white: true,
-            gray: false
+            gray: true
         },
         dimensions: {
-            width: 90,
-            length: 90,
+            topDiameter: 90,
+            bottomDiameter: 55,
             height: 135
         }
     },
     cutlery_case: {
         id: 'cutlery_case',
         name: {
-            pl: 'Etui na sztućce',
+            pl: 'Kieszeń na sztućce',
             en: 'Cutlery case',
-            dk: 'Bestik tilfælde'
+            dk: 'Bestiklomme'
         },
         description: {
             pl: 'Etui na sztućcey. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -549,8 +556,8 @@ module.exports = {
         id: 'hotdog_pocket',
         name: {
             pl: 'Kieszeń na hot doga',
-            en: 'Hot doga pocket',
-            dk: 'Lomme til hotdog'
+            en: 'Hot dog pocket',
+            dk: 'Hotdog lomme'
         },
         description: {
             pl: 'Pudełko burger duże. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -571,7 +578,7 @@ module.exports = {
         name: {
             pl: 'Pudełko indyjskie małe',
             en: 'Indian box small',
-            dk: 'Indisk kasse lille'
+            dk: 'Kina boks lille'
         },
         description: {
             pl: 'Pudełko indyjskie małe wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -583,8 +590,10 @@ module.exports = {
             gray: true
         },
         dimensions: {
-            width: 90,
-            length: 110,
+            topWidth: 110,
+            topLength: 130,
+            bottomWidth: 90,
+            bottomLength: 110,
             height: 65
         }
     },
@@ -593,7 +602,7 @@ module.exports = {
         name: {
             pl: 'Pudełko indyjskie średnie',
             en: 'Indian box medium',
-            dk: 'Indisk kasse medium'
+            dk: 'Kina boks mellem'
         },
         description: {
             pl: 'Pudełko indyjskie średnie. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -605,8 +614,10 @@ module.exports = {
             gray: true
         },
         dimensions: {
-            width: 150,
-            length: 120,
+            topWidth: 140,
+            topLength: 170,
+            bottomWidth: 120,
+            bottomLength: 150,
             height: 65
         }
     },
@@ -615,7 +626,7 @@ module.exports = {
         name: {
             pl: 'Pudełko indyjskie duże',
             en: 'Indian box large',
-            dk: 'Indisk kasse stor'
+            dk: 'Kina boks stor'
         },
         description: {
             pl: 'Pudełko indyjskie duże. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -627,8 +638,10 @@ module.exports = {
             gray: true
         },
         dimensions: {
-            width: 200,
-            length: 140,
+            topWidth: 160,
+            topLength: 220,
+            bottomWidth: 140,
+            bottomLength: 200,
             height: 65
         }
     },
@@ -637,7 +650,7 @@ module.exports = {
         name: {
             pl: 'Pudełko indyjskie',
             en: 'Indian box',
-            dk: 'Indisk kasse'
+            dk: 'Kina boks kvadrat'
         },
         description: {
             pl: 'Pudełko indyjskie. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -649,8 +662,10 @@ module.exports = {
             gray: true
         },
         dimensions: {
-            width: 150,
-            length: 150,
+            topWidth: 170,
+            topLength: 170,
+            bottomWidth: 150,
+            bottomLength: 150,
             height: 65
         }
     },
@@ -659,7 +674,7 @@ module.exports = {
         name: {
             pl: 'Pudełko zamykane małe',
             en: 'Lockable box small',
-            dk: 'Aflåselig kasse lille'
+            dk: 'Lukket boks lille'
         },
         description: {
             pl: 'Pudełko zamykane małe. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -681,7 +696,7 @@ module.exports = {
         name: {
             pl: 'Pudełko zamykane duże',
             en: 'Lockable box large',
-            dk: 'Aflåselig kasse stor'
+            dk: 'Lukket boks stor'
         },
         description: {
             pl: 'Pudełko zamykane średnie. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -703,7 +718,7 @@ module.exports = {
         name: {
             pl: 'Serwetka 1',
             en: 'Napkin 1',
-            dk: 'Mellemlægsserviet 1'
+            dk: 'Serviet 1'
         },
         description: {
             pl: 'Serwetka Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -724,7 +739,7 @@ module.exports = {
         name: {
             pl: 'Serwetka 2',
             en: 'Napkin 2',
-            dk: 'Mellemlægsserviet 2'
+            dk: 'Serviet 2'
         },
         description: {
             pl: 'Serwetka Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -745,7 +760,7 @@ module.exports = {
         name: {
             pl: 'Serwetka 3',
             en: 'Napkin 3',
-            dk: 'Mellemlægsserviet 3'
+            dk: 'Serviet 3'
         },
         description: {
             pl: 'Serwetka Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -766,7 +781,7 @@ module.exports = {
         name: {
             pl: 'Pudełko niezamykane małe',
             en: 'Nonlockable box small',
-            dk: 'Ikke-låselig kasse lille'
+            dk: 'Åben boks lille'
         },
         description: {
             pl: 'Pudełko zamykane średnie. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -788,7 +803,7 @@ module.exports = {
         name: {
             pl: 'Pudełko niezamykane duże',
             en: 'Nonlockable box large',
-            dk: 'Ikke-låselig kasse stor'
+            dk: 'Åben boks stor'
         },
         description: {
             pl: 'Pudełko zamykane średnie. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -810,7 +825,7 @@ module.exports = {
         name: {
             pl: 'Pudełko na pizze 30cm',
             en: 'Pizza box 30cm',
-            dk: 'Boks på pizzaer 30cm'
+            dk: 'Pizzabakke 30cm'
         },
         description: {
             pl: 'Pudełko na pizze. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -832,7 +847,7 @@ module.exports = {
         name: {
             pl: 'Pudełko na pizze 33cm',
             en: 'Pizza box 33cm',
-            dk: 'Boks på pizzaer 33cm'
+            dk: 'Pizzabakke 33cm'
         },
         description: {
             pl: 'Pudełko na pizze. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -854,7 +869,7 @@ module.exports = {
         name: {
             pl: 'Pudełko na pizze 41cm',
             en: 'Pizza box 41cm',
-            dk: 'Boks på pizzaer 41cm'
+            dk: 'Pizzabakke 41cm'
         },
         description: {
             pl: 'Pudełko na pizze. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -897,7 +912,7 @@ module.exports = {
         name: {
             pl: 'Torba zakupowa',
             en: 'Shopping bag',
-            dk: 'Shopping taske'
+            dk: 'Indkøbspose'
         },
         description: {
             pl: 'Torba zakupowa. Torba ta jest wykonana z papieru o grubości 240 g/m2. Dzięki gramaturze papieru torba jest niezwykle trwała i w stanie wytrzymać wagę do 4,2kg zakupów.',
@@ -919,7 +934,7 @@ module.exports = {
         name: {
             pl: 'Torebka typu sushi',
             en: 'Sushi bag',
-            dk: 'Sushi taske'
+            dk: 'Takeaway pose'
         },
         description: {
             pl: 'Torebka typu sushi wykonana z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
@@ -931,9 +946,9 @@ module.exports = {
             gray: true
         },
         dimensions: {
-          width: 0,
-          length: 0,
-          height: 0
+            width: 317,
+            length: 218,
+            height: 245
         }
     }
 }

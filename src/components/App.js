@@ -4,6 +4,7 @@ import CategorySelector from './CategorySelector';
 import productsList from '../reducers/new_products';
 import categories from '../reducers/product_categories';
 import Product from './Product';
+import ProductPage from './ProductPage';
 import base from '../base';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -15,6 +16,7 @@ class App extends React.Component {
 		this.addToOrder = this.addToOrder.bind(this); 
 		this.removeFromOrder = this.removeFromOrder.bind(this); 
 		this.selectCategory = this.selectCategory.bind(this); 
+		this.closeProduct = this.closeProduct.bind(this);
 	}
 	
 	state = {
@@ -24,7 +26,8 @@ class App extends React.Component {
 		selectedCat: 'all',
 		added: {},
 		language: 'en',
-		openProd: true
+		openProd: true,
+		gray: false
 	}
  
 	componentWillMount() {
@@ -77,21 +80,31 @@ class App extends React.Component {
 		delete order[key]; //update or add new number of ordered products
 		this.setState({ order,  added}); // update state, ES short for {order: this.order}
 	}
-
+	closeProduct(){ 
+		this.context.router.transitionTo(`/all`);	
+	}
 	render() {
 
 		const categoryProducts =  this.state.categories[this.state.selectedCat].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
 	    const cats = this.state.selectedCat === 'all' ? productsList : categoryProducts;
-		
+		const imageGray = this.state.gray ? "_gray": "";
+		const productAdded = this.state.added[this.props.params.productId] ? 'disabled' : '';
+		const productRemoved = this.state.added[this.props.params.productId] ? '' : 'disabled';
+		const openProduct = this.state.openProd && this.props.params.productId ? ( <ProductPage details={this.state.products[this.props.params.productId]} closeProduct={this.closeProduct} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} viewWhite={this.viewWhite} viewGray={this.viewGray} language={this.state.language} imageGray={imageGray} productAdded={productAdded} productRemoved={productRemoved} /> ) : '';
 		return (
-			<div className="wrapper">
+			<div className="wrapper">	
 				<CategorySelector categories={this.state.categories} 
 								  selectCategory={this.selectCategory}
 								  selectedCat={this.state.selectedCat}
 								  language={this.state.language}
 								  />
+				
+				<CSSTransitionGroup className="products selection" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
+					{openProduct}
+				</CSSTransitionGroup>
+
 				<div className="menu">
-					<CSSTransitionGroup className="products selection"component="ul" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
+					<CSSTransitionGroup className="products selection" component="ul" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
 						{ Object.keys(cats).map(key =>  
 							<Product open={this.state.open} 
 							addToOrder={this.addToOrder} 

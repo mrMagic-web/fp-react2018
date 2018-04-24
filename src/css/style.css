@@ -253,6 +253,11 @@ input::-moz-focus-inner {
   color: #fff;
   background-color: #337ab7;
 }
+.order-wrap .order-button {
+  display: block;
+  margin: 5px auto;
+  width: 100%;
+}
 ul.order {
   position: relative;
   list-style: none;

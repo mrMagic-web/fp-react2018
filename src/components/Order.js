@@ -1,5 +1,6 @@
 import React from 'react';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
+import pageElements from '../reducers/page_elements';
 
 class Order extends React.Component {
 	constructor() {
@@ -8,7 +9,7 @@ class Order extends React.Component {
 	}
 	renderOrder(key) {
 		const removeButton = <button onClick={() => this.props.removeFromOrder(key)}>&times;</button>
-		return <li key={key}>{key} {removeButton}</li>;
+		return <li key={key}>{this.props.products[key].name[this.props.language]} {removeButton}</li>;
 	}
 
 	render(){
@@ -17,10 +18,12 @@ class Order extends React.Component {
 		return (
 			<div>
 				<div className="order-wrap">
-					<h4>Your order</h4>
+					<h4>{pageElements.orderTitle[this.props.language]}</h4>
 					<CSSTransitionGroup className="order"component="ul" transitionName="order" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
 						{orderIds.map(this.renderOrder)}
+						
 					</CSSTransitionGroup>
+					<button className="order-button">{pageElements.orderBtn[this.props.language]}</button>
 				</div>
 			</div>
 		)

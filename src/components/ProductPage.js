@@ -19,7 +19,6 @@ class ProductPage extends React.Component {
 		const imageGray = this.props.imageGray;
 		const language = this.props.language;
 		return (
-			<aside>
 				<li className="expand">
 						<div onClick={this.props.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
 						<div className="image">
@@ -41,7 +40,6 @@ class ProductPage extends React.Component {
 						</div>
 						</div>
 				</li>
-			</aside>
 
 		)
 	}
