@@ -4,6 +4,7 @@ import CategorySelector from './CategorySelector';
 import productsList from '../reducers/new_products';
 import categories from '../reducers/product_categories';
 import Product from './Product';
+import Form from './Form';
 import ProductPage from './ProductPage';
 import base from '../base';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
@@ -17,6 +18,7 @@ class App extends React.Component {
 		this.removeFromOrder = this.removeFromOrder.bind(this); 
 		this.selectCategory = this.selectCategory.bind(this); 
 		this.closeProduct = this.closeProduct.bind(this);
+		this.contact = this.contact.bind(this);
 	}
 	
 	state = {
@@ -27,7 +29,8 @@ class App extends React.Component {
 		added: {},
 		language: 'en',
 		openProd: true,
-		gray: false
+		gray: false,
+		fields: {}
 	}
  
 	componentWillMount() {
@@ -83,6 +86,12 @@ class App extends React.Component {
 	closeProduct(){ 
 		this.context.router.transitionTo(`/all`);	
 	}
+	contact() {
+		this.context.router.transitionTo(`/contact`);	
+	}
+	onSubmit = fields => {
+		this.setState({fields});
+	}
 	render() {
 
 		const categoryProducts =  this.state.categories[this.state.selectedCat].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
@@ -113,7 +122,8 @@ class App extends React.Component {
 							details={this.state.products[key]} key={key} /> )}
 					</CSSTransitionGroup>
 				</div>
-				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} language={this.state.language}/>
+				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} language={this.state.language} contact={this.contact}/>
+				<Form onSubmit={fields => this.onSubmit(fields)} />
 			</div>
 		)
 	}
