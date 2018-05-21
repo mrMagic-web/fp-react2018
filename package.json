@@ -2,6 +2,7 @@
   "name": "cotd",
   "version": "0.0.1",
   "private": true,
+  "proxy": "http://localhost:3001",
   "devDependencies": {
     "autoprefixer-stylus": "0.10.0",
     "babel-eslint": "^7.1.1",
@@ -14,7 +15,13 @@
     "stylus": "0.54.5"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.3",
+    "express-handlebars": "^3.0.0",
     "history": "4.2.0",
+    "material-ui": "^0.20.0",
+    "nodemailer": "^4.6.4",
     "re-base": "2.2.0",
     "react": "^15.6.2",
     "react-addons-css-transition-group": "15.3.2",

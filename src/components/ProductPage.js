@@ -20,25 +20,25 @@ class ProductPage extends React.Component {
 		const language = this.props.language;
 		return (
 				<li className="expand">
-						<div onClick={this.props.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
-						<div className="image">
-							<img alt={product.name[language]} src={`${imageUrl}${product.id}${imageGray}.jpg`} />
-						</div>
-						<div className="description">
-						<h4>{product.name[language]} <div className="colors"><span onClick={this.props.viewWhite} className={white}></span> <span onClick={this.props.viewGray} className={gray}></span></div></h4>
-						
-						<p>{product.description[language]}
-						</p>
-						<ul className="dimensions">
-						{ Object.keys(product.dimensions)
-								.map(key => <li key={key}> <b>{key}</b> <br/> <span>{product.dimensions[key]}</span> </li>) 
-						}
-						</ul>
-						<div className="cartButtons">
-							<button className={this.props.productAdded} onClick={() => this.props.addToOrder(product.id)}>Add to order</button>
-							<button className={this.props.productRemoved} onClick={() => this.props.removeFromOrder(product.id)}>Remove from order</button>
-						</div>
-						</div>
+					<div onClick={this.props.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
+					<div className="image">
+						<img alt={product.name[language]} src={`${imageUrl}${product.id}${imageGray}.jpg`} />
+					</div>
+					<div className="description">
+					<h4>{product.name[language]} <div className="colors"><span onClick={this.props.viewWhite} className={white}></span> <span onClick={this.props.viewGray} className={gray}></span></div></h4>
+					
+					<p>{product.description[language]}
+					</p>
+					<ul className="dimensions">
+					{ Object.keys(product.dimensions)
+							.map(key => <li key={key}> <b>{key}</b> <br/> <span>{product.dimensions[key]}</span> </li>) 
+					}
+					</ul>
+					<div className="cartButtons">
+						<button className={this.props.productAdded} onClick={() => this.props.addToOrder(product.id)}>Add to order</button>
+						<button className={this.props.productRemoved} onClick={() => this.props.removeFromOrder(product.id)}>Remove from order</button>
+					</div>
+					</div>
 				</li>
 
 		)

@@ -7,8 +7,9 @@ import Product from './Product';
 import Form from './Form';
 import ProductPage from './ProductPage';
 import base from '../base';
+import Modal from 'react-responsive-modal';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
-
+import axios from 'axios';
 
 class App extends React.Component {
 
@@ -18,6 +19,7 @@ class App extends React.Component {
 		this.removeFromOrder = this.removeFromOrder.bind(this); 
 		this.selectCategory = this.selectCategory.bind(this); 
 		this.closeProduct = this.closeProduct.bind(this);
+		this.closeModal = this.closeModal.bind(this);
 		this.contact = this.contact.bind(this);
 	}
 	
@@ -27,6 +29,7 @@ class App extends React.Component {
 		categories: {},
 		selectedCat: 'all',
 		added: {},
+		modalOpen: false,
 		language: 'en',
 		openProd: true,
 		gray: false,
@@ -87,7 +90,10 @@ class App extends React.Component {
 		this.context.router.transitionTo(`/all`);	
 	}
 	contact() {
-		this.context.router.transitionTo(`/contact`);	
+		this.setState({modalOpen: true});
+	}
+	closeModal() {
+		this.setState({modalOpen: false});
 	}
 	onSubmit = fields => {
 		this.setState({fields});
@@ -123,7 +129,9 @@ class App extends React.Component {
 					</CSSTransitionGroup>
 				</div>
 				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} language={this.state.language} contact={this.contact}/>
-				<Form onSubmit={fields => this.onSubmit(fields)} />
+				<Modal open={this.state.modalOpen} onClose={this.closeModal} little>
+					<Form onSubmit={fields => this.onSubmit(fields)} order={this.state.order} products={this.state.products} closeModal={this.closeModal} />
+				</Modal>
 			</div>
 		)
 	}

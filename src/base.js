@@ -5,7 +5,8 @@ const base = Rebase.createClass({
     authDomain: "fastpack-1515648279099.firebaseapp.com",
     databaseURL: "https://fastpack-1515648279099.firebaseio.com",
     projectId: "fastpack-1515648279099",
-    storageBucket: "fastpack-1515648279099.appspot.com"
+    storageBucket: "fastpack-1515648279099.appspot.com",
+    messagingSenderId: "7735569093"
 });
 
 export default base;
