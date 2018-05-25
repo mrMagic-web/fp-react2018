@@ -3,7 +3,6 @@ import ICONS from '../graphics/icons';
 import Icon from '../graphics/icon';
 import ReactTooltip from 'react-tooltip'
 import { language, imageUrl} from '../helpers';
-import axios from 'axios';
 
 class Form extends React.Component {
 	
@@ -40,28 +39,18 @@ class Form extends React.Component {
 		const product = this.props.products[e];
 		const back = imageUrl + 'thumbs/' +product.id + '.jpg';
 		const tip = product.id;
-		return <div data-tip={tip} style={ {backgroundImage: `url(${back})` }} className="order-product" key={product.id}></div>;
+		return <div data-tip={tip} style={ {backgroundImage: `url(${back})` }} className="order-product" key={product.id} ></div>;
 	}
 	onSubmit(e) {
 		e.preventDefault();
-		const err = this.validate();
+		const order = Object.keys(this.props.order).map( e => this.props.products[e].name[language]);
 
-		if(!err) {
-			this.props.onSubmit(this.state);
-			this.setState({ name: '', email: '', phone: ''});
-		}
-		const {name, email, phone} = this.setState
-
-		// const form = await axios.post('/api/form', {
-		// 	name,
-		// 	email,
-		// 	phone
-		// })
-		axios.post(`http://magiceportfolio.xon.pl/mailer.php`, { name: "Maciek", email: "maciejdrahusz@gmai.com", phone: "511322292" })
-		    .then(res => {
-		    	console.log(res);
-		    	console.log(res.data);
-		    })
+		window.$crisp.push(["do", "chat:open"])
+		window.$crisp.push(["do", "message:send", ['text', `Hello ${this.state.name}. You have chosen following products`]])
+		window.$crisp.push(["do", "message:send", ['text', `"${JSON.stringify(order)}"`]])
+		window.$crisp.push(["do", "message:send", ['text', `We will contact you as soon as possible to discuss your requirements.`]])		
+		window.$crisp.push(["set", "user:email", [this.state.email]]);
+		window.$crisp.push(["set", "user:nickname", [JSON.stringify(this.state.name)]]);		
 	}
 
 	render(){
@@ -70,7 +59,7 @@ class Form extends React.Component {
 			<div className="wrapper contact">	
 				<div className="current-order">{order.map( e => this.renderOrder(e))}</div>
 				<div onClick={this.props.closeModal}><Icon icon={ICONS.CLOSE} className="icon icon-close" /></div>
-				<form className="contact-form" method="POST" action="mailer.php">
+				<form className="contact-form">
 					<span>{this.state.nameError}</span>					
 					<input name="name" 
 					value={this.state.name} 

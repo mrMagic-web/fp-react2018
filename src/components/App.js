@@ -9,7 +9,6 @@ import ProductPage from './ProductPage';
 import base from '../base';
 import Modal from 'react-responsive-modal';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
-import axios from 'axios';
 
 class App extends React.Component {
 
@@ -37,7 +36,7 @@ class App extends React.Component {
 	}
  
 	componentWillMount() {
-	
+				
 		//this runs before the app is rendered
         this.ref = base.syncState(`${this.props.params.storeId}/product`, {
             context: this,
@@ -65,6 +64,8 @@ class App extends React.Component {
     }
     componentWillUnmount(){
     	base.removeBinding(this.ref);
+
+    	
     }
     componentWillUpdate(nextProps, nextState) {
     	localStorage.setItem(`order-${this.props.params.productId}`, JSON.stringify(nextState.order)); // when adding to local storege we cannot use object. we turn it into string
@@ -91,6 +92,7 @@ class App extends React.Component {
 	}
 	contact() {
 		this.setState({modalOpen: true});
+
 	}
 	closeModal() {
 		this.setState({modalOpen: false});
