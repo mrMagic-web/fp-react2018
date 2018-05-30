@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import ProductsList from '../reducers/new_products';
 import { imageUrl } from '../helpers';
 import ICONS from '../graphics/icons';
@@ -46,7 +47,7 @@ class ProductPage extends React.Component {
 }
 
 ProductPage.contextTypes = {
-	router: React.PropTypes.object
+	router: PropTypes.object
 }
 
 export default ProductPage;

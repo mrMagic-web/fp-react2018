@@ -9,7 +9,7 @@ const Root = () => {
 	// Router with BrowserRouter, Match and Miss
 
 	return (
-		<BrowserRouter>
+		<BrowserRouter basename="/">
 			<div>
 				<Match exactly pattern="/" component={App} />
 				<Match exactly pattern="/:selectedCat" component={App} />

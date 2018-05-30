@@ -45,10 +45,10 @@ class Form extends React.Component {
 		e.preventDefault();
 		const order = Object.keys(this.props.order).map( e => this.props.products[e].name[language]);
 
-		window.$crisp.push(["do", "chat:open"])
-		window.$crisp.push(["do", "message:send", ['text', `Hello ${this.state.name}. You have chosen following products`]])
-		window.$crisp.push(["do", "message:send", ['text', `"${JSON.stringify(order)}"`]])
-		window.$crisp.push(["do", "message:send", ['text', `We will contact you as soon as possible to discuss your requirements.`]])		
+		window.$crisp.push(["do", "chat:open"]);
+		setTimeout( window.$crisp.push(["do", "message:send", ['text', `Hello ${this.state.name}. You have chosen following products`]]), 100);
+		setTimeout( window.$crisp.push(["do", "message:send", ['text', `"${JSON.stringify(order)}"`]]), 500);
+		setTimeout( window.$crisp.push(["do", "message:send", ['text', `We will contact you as soon as possible to discuss your requirements.`]]), 1100);
 		window.$crisp.push(["set", "user:email", [this.state.email]]);
 		window.$crisp.push(["set", "user:nickname", [JSON.stringify(this.state.name)]]);		
 	}

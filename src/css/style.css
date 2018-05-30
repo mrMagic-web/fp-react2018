@@ -275,7 +275,7 @@ input::-moz-focus-inner {
   background-color: #fff;
   width: 250px;
   padding: 0 15px 0;
-  border: 2px solid #337ab7;
+  border: 2px solid #00adef;
   border-top: none;
 }
 .order-wrap h4 {
@@ -283,7 +283,7 @@ input::-moz-focus-inner {
   text-align: center;
   padding: 4px;
   color: #fff;
-  background-color: #337ab7;
+  background-color: #00adef;
 }
 .order-wrap .order-button {
   display: block;
@@ -330,6 +330,8 @@ ul.order li button {
   right: 15px;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
 }
 .products .product-name {
   margin: 10px 0;
@@ -357,6 +359,32 @@ ul.order li button {
   -ms-flex-direction: column;
       flex-direction: column;
   border: 1px solid #f1f1f1;
+}
+.products .product .product-hover {
+  display: none;
+}
+.products .product .product-hover button {
+  width: 100%;
+  margin: 10px;
+  border: 1px solid #fff;
+  color: #fff;
+  padding: 10px;
+}
+.products .product:hover .product-hover {
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #00adef;
+  z-index: 4;
+  opacity: 0.6;
+  top: 0;
+  left: 0;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
 }
 .products .product img {
   width: 200px;
@@ -496,8 +524,8 @@ input[type=submit].success:after {
 }
 .gray,
 .white {
-  width: 32px;
-  height: 32px;
+  width: 22px;
+  height: 22px;
   border: 1px solid #d3d3d3;
   display: -ms-flexbox;
   display: flex;
@@ -510,6 +538,7 @@ input[type=submit].success:after {
   box-shadow: 0px 0px 2px 0px rgba(50,50,50,0.5);
 }
 .gray {
+  margin-top: 3px;
   background-image: url("http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg");
 }
 html {

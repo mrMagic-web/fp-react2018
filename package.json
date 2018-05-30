@@ -2,7 +2,7 @@
   "name": "cotd",
   "version": "0.0.1",
   "private": true,
-  "proxy": "http://localhost:3001",
+  "homepage": "http://sklep.magiceportfolio.xon.pl/",
   "devDependencies": {
     "autoprefixer-stylus": "0.10.0",
     "babel-eslint": "^7.1.1",
@@ -11,7 +11,7 @@
     "eslint-plugin-flowtype": "^2.29.1",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.8.0",
-    "react-scripts": "0.6.1",
+    "react-scripts": "^1.1.4",
     "stylus": "0.54.5"
   },
   "dependencies": {
@@ -22,6 +22,7 @@
     "history": "4.2.0",
     "material-ui": "^0.20.0",
     "nodemailer": "^4.6.4",
+    "prop-types": "^15.6.1",
     "re-base": "2.2.0",
     "react": "^15.6.2",
     "react-addons-css-transition-group": "15.3.2",

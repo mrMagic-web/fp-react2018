@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import Order from './Order';
 import CategorySelector from './CategorySelector';
 import productsList from '../reducers/new_products';
@@ -16,7 +18,8 @@ class App extends React.Component {
 		super(); // we can't use this until we call super()
 		this.addToOrder = this.addToOrder.bind(this); 
 		this.removeFromOrder = this.removeFromOrder.bind(this); 
-		this.selectCategory = this.selectCategory.bind(this); 
+		this.selectCategory = this.selectCategory.bind(this);
+		this.openProduct = this.openProduct.bind(this); 
 		this.closeProduct = this.closeProduct.bind(this);
 		this.closeModal = this.closeModal.bind(this);
 		this.contact = this.contact.bind(this);
@@ -64,8 +67,6 @@ class App extends React.Component {
     }
     componentWillUnmount(){
     	base.removeBinding(this.ref);
-
-    	
     }
     componentWillUpdate(nextProps, nextState) {
     	localStorage.setItem(`order-${this.props.params.productId}`, JSON.stringify(nextState.order)); // when adding to local storege we cannot use object. we turn it into string
@@ -86,6 +87,9 @@ class App extends React.Component {
  		delete added[key];
 		delete order[key]; //update or add new number of ordered products
 		this.setState({ order,  added}); // update state, ES short for {order: this.order}
+	}
+	openProduct () {
+		
 	}
 	closeProduct(){ 
 		this.context.router.transitionTo(`/all`);	
@@ -127,6 +131,7 @@ class App extends React.Component {
 							addToOrder={this.addToOrder} 
 							added={this.state.added} language={this.state.language}
 							removeFromOrder={this.removeFromOrder}  
+							openProduct={this.state.openProduct}
 							details={this.state.products[key]} key={key} /> )}
 					</CSSTransitionGroup>
 				</div>
@@ -140,7 +145,7 @@ class App extends React.Component {
 }
 
 App.contextTypes = {
-  router: React.PropTypes.object
+  router: PropTypes.object
 }
 
 export default App;

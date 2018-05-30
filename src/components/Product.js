@@ -56,17 +56,11 @@ class Product extends React.Component {
 
 		return (
 			<li className="product">
+				<div className="product-hover"><button>See details</button></div>
 				<div className="clickable" onClick={this.openProduct}>
 					<img alt={details.id} src={`${imageUrl}/thumbs/${details.id}${imageGray}.jpg`} />
 					<h4 className="product-name">{details.name[language]}</h4>
-				</div>
-				<div className="colors"><span onClick={this.viewWhite} className={white}></span> <span onClick={this.viewGray} className={gray}></span></div>
-				<div className='description'>
-					<p>{details.description[language]}</p>
-				</div>
-				<div className="order-buttons" >
-					<button onClick={() => this.props.addToOrder(details.id)} className={productAdded}>Add to order</button>
-					{/*<button onClick={() => this.props.removeFromOrder(details.id)}>Remove from order</button>*/}
+					<div className="colors"><span onClick={this.viewWhite} className={white}></span> <span onClick={this.viewGray} className={gray}></span></div>
 				</div>
 			</li>
 		)
