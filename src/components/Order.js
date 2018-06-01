@@ -14,7 +14,7 @@ class Order extends React.Component {
 	}
 	render(){
 		const orderIds = Object.keys(this.props.order);
-		if(orderIds.length === 0)  return <div>&nbsp;</div> 
+		if(orderIds.length === 0)  return <div></div> 
 		return (
 			<div>
 				<div className="order-wrap">

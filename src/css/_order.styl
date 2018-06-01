@@ -1,8 +1,8 @@
 .order-wrap
   position fixed
   bottom 0
-  z-index 2
-  right 0
+  z-index 4
+  left 0
   background-color white
   width 250px
   padding 0 15px 0
@@ -26,16 +26,21 @@ ul.order
   list-style none
   padding 0
   margin 5px 0 0
+  max-height: 140px;
+  overflow-y: auto;
   li
     border-bottom 1px solid gray-lighter
-    padding 12px 0
+    padding 12px 30px 12px 0
     font-size 1.4rem
     justify-content space-between
-    align-items center
-    
+    align-items top
+    position relative
+    max-height 32px
+    overflow hidden
     button
       border 0
       line-height 1
       padding 2px 4px 
       position absolute
-      right 0px
+      right 0
+      top 10px

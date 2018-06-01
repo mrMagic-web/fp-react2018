@@ -3,9 +3,11 @@ import PropTypes from 'prop-types';
 
 import Order from './Order';
 import CategorySelector from './CategorySelector';
+import pageElements from '../reducers/page_elements';
 import productsList from '../reducers/new_products';
 import categories from '../reducers/product_categories';
 import Product from './Product';
+import Custom from './Custom';
 import Form from './Form';
 import ProductPage from './ProductPage';
 import base from '../base';
@@ -135,6 +137,7 @@ class App extends React.Component {
 							details={this.state.products[key]} key={key} /> )}
 					</CSSTransitionGroup>
 				</div>
+				<Custom />
 				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} language={this.state.language} contact={this.contact}/>
 				<Modal open={this.state.modalOpen} onClose={this.closeModal} little>
 					<Form onSubmit={fields => this.onSubmit(fields)} order={this.state.order} products={this.state.products} closeModal={this.closeModal} />

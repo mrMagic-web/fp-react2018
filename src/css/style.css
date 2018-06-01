@@ -21,6 +21,25 @@
   color: #404040;
   cursor: default;
 }
+.custom {
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #00adef;
+  padding: 4rem 2rem;
+}
+.custom__section {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  text-align: left;
+  color: #fff;
+}
+.custom__section h1 {
+  text-align: left;
+  font-weight: 100;
+}
+.custom__section p {
+  font-size: 1.25rem;
+}
 .order-enter {
   transition: all 0.4s;
   transform: translateZ(-120%);
@@ -270,8 +289,8 @@ input::-moz-focus-inner {
 .order-wrap {
   position: fixed;
   bottom: 0;
-  z-index: 2;
-  right: 0;
+  z-index: 4;
+  left: 0;
   background-color: #fff;
   width: 250px;
   padding: 0 15px 0;
@@ -295,23 +314,29 @@ ul.order {
   list-style: none;
   padding: 0;
   margin: 5px 0 0;
+  max-height: 140px;
+  overflow-y: auto;
 }
 ul.order li {
   border-bottom: 1px solid #f1f1f1;
-  padding: 12px 0;
+  padding: 12px 30px 12px 0;
   font-size: 1.4rem;
   -ms-flex-pack: justify;
       justify-content: space-between;
-  -ms-flex-align: center;
-      -ms-grid-row-align: center;
-      align-items: center;
+  -ms-flex-align: top;
+      -ms-grid-row-align: top;
+      align-items: top;
+  position: relative;
+  max-height: 32px;
+  overflow: hidden;
 }
 ul.order li button {
   border: 0;
   line-height: 1;
   padding: 2px 4px;
   position: absolute;
-  right: 0px;
+  right: 0;
+  top: 10px;
 }
 .products {
   display: -ms-flexbox;
@@ -335,12 +360,14 @@ ul.order li button {
 }
 .products .product-name {
   margin: 10px 0;
+  padding-right: 30px;
 }
 .products .description {
   margin-bottom: 10px;
 }
 .products .description p {
   margin-top: 0;
+  padding-right: 55px;
   font-size: 1.25rem;
 }
 .products .description h4 {
@@ -413,8 +440,13 @@ ul.order li button {
   padding-right: 30px;
 }
 .products .expand .colors {
-  top: 15px;
-  right: 15px;
+  top: 15px !important;
+  right: 15px !important;
+  height: 68px;
+}
+.products .expand .colors span {
+  width: 32px;
+  height: 32px;
 }
 .products .expand .description {
   width: 60%;
@@ -469,13 +501,14 @@ button,
 input[type=submit] {
   text-transform: uppercase;
   background: none;
-  border: 1px solid #404040;
+  border: 1px solid #00adef;
   font-weight: 600;
   font-size: 1.5rem;
   font-family: 'OpenSans-Bold';
   transition: all 0.2s;
   position: relative;
   z-index: 2;
+  color: #00adef;
 }
 button.disabled,
 input[type=submit].disabled {
@@ -497,7 +530,7 @@ input[type=submit]:after {
   content: '';
   z-index: -1;
   display: block;
-  background: #404040;
+  background: #00adef;
   position: absolute;
   width: 100%;
   height: 0%;
@@ -507,20 +540,13 @@ input[type=submit]:after {
 }
 button:hover,
 input[type=submit]:hover {
+  background-color: #00adef;
   color: #fff;
   outline: 0;
 }
 button:hover:after,
 input[type=submit]:hover:after {
   height: 100%;
-}
-button.warning:after,
-input[type=submit].warning:after {
-  background: #f00;
-}
-button.success:after,
-input[type=submit].success:after {
-  background: #008000;
 }
 .gray,
 .white {
@@ -575,11 +601,9 @@ h4 {
   font-size: 1.4rem;
 }
 .wrapper {
-  max-width: 1280px;
   margin: 0 auto;
   position: relative;
   width: 100%;
-  padding: 2rem;
   background: #fff;
 }
 svg {

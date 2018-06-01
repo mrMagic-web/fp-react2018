@@ -38,7 +38,7 @@ class Form extends React.Component {
 	renderOrder = e => {
 		const product = this.props.products[e];
 		const back = imageUrl + 'thumbs/' +product.id + '.jpg';
-		const tip = product.id;
+		const tip = product.name[language];
 		return <div data-tip={tip} style={ {backgroundImage: `url(${back})` }} className="order-product" key={product.id} ></div>;
 	}
 	onSubmit(e) {
