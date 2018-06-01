@@ -29,6 +29,7 @@
     max-width 267px
     display flex
     position relative
+    background-blend-mode: multiply;
     flex-direction column
     border 1px solid gray-lighter
     .product-hover
@@ -47,7 +48,7 @@
         height 100%
         background-color brand-primary
         z-index 4
-        opacity .6
+        opacity .7
         top 0
         left 0
         justify-content center
@@ -92,16 +93,23 @@
         display flex
         justify-content space-between
         font-size 1.2rem
+        align-content flex-end
         margin-bottom: 25px;
         li 
-          width 90px
+          flex 1 1 auto
+          display flex
+          margin 0 4px
+          flex-direction column
           text-align center
           border-right 1px solid gray-lighter
           &:last-of-type
             border-right none            
           b
+            text-align center
             margin-bottom 0
             display block
+            font-size 1rem
+            height 20px
       h4
         position relative
         .colors

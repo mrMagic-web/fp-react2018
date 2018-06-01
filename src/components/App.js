@@ -139,7 +139,7 @@ class App extends React.Component {
 					</CSSTransitionGroup>
 				</div>
 				<Custom />
-				<SampleProjects />
+				<SampleProjects category={this.state.selectedCat}/>
 				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} language={this.state.language} contact={this.contact}/>
 				<Modal open={this.state.modalOpen} onClose={this.closeModal} little>
 					<Form onSubmit={fields => this.onSubmit(fields)} order={this.state.order} products={this.state.products} closeModal={this.closeModal} />

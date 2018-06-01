@@ -34,6 +34,7 @@
     "react-slick": "^0.23.1",
     "react-tooltip": "^3.4.0",
     "redux-form": "^7.3.0",
+    "slick-carousel": "^1.8.1",
     "source-map": "^0.7.2"
   },
   "scripts": {

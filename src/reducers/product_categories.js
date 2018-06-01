@@ -47,18 +47,11 @@ module.exports = {
           ]
         },
         portfolio: [
-          '157_candycastle',
-          '157_dst',
-          '157_okno_blandselvslik',
-          '157_okno_bonbons',
-          '157_sliksafari',
-          '157_sweetcity',
-          '180_faetter',
-          '180_fluffy',
-          '180_pistachia',
-          '180_sukker',
-          'duzatorba_candymegastore',
-          'duzatorba_elina'
+          'foodtruck_fishlobster',
+          'foodtruck_fuego',
+          'foodtruck_den_fede',
+          'your_burger_kraft',
+          'your_burger_white'
         ],
         productList: [
           'chips_box',
@@ -109,18 +102,11 @@ module.exports = {
           ]
         },
         portfolio: [
-          '157_candycastle',
-          '157_dst',
-          '157_okno_blandselvslik',
-          '157_okno_bonbons',
-          '157_sliksafari',
-          '157_sweetcity',
-          '180_faetter',
-          '180_fluffy',
-          '180_pistachia',
-          '180_sukker',
-          'duzatorba_candymegastore',
-          'duzatorba_elina'
+          'your_burger_kraft',
+          'your_burger_white',
+          'your-sushi2_black',
+          'your-sushi3_white',
+          'your-sushi-black'
         ],
         productList: [
           'sushi_bag',
@@ -205,18 +191,10 @@ module.exports = {
           ]
         },
         portfolio: [
-          '157_candycastle',
-          '157_dst',
-          '157_okno_blandselvslik',
-          '157_okno_bonbons',
-          '157_sliksafari',
-          '157_sweetcity',
-          '180_faetter',
-          '180_fluffy',
-          '180_pistachia',
-          '180_sukker',
-          'duzatorba_candymegastore',
-          'duzatorba_elina'
+          'crwonbagel',
+          'your_cofee_gray',
+          'your_cofee_white',
+          'my_bagels'
         ],
         productList: [
           'coffee_cup_sm',
@@ -307,18 +285,12 @@ module.exports = {
           ]
         },
         portfolio: [
-          '157_candycastle',
-          '157_dst',
-          '157_okno_blandselvslik',
-          '157_okno_bonbons',
-          '157_sliksafari',
-          '157_sweetcity',
-          '180_faetter',
-          '180_fluffy',
-          '180_pistachia',
-          '180_sukker',
-          'duzatorba_candymegastore',
-          'duzatorba_elina'
+          'ilgusto_craft_fastpack',
+          'eggsperience_pizza',
+          'fastpack_liban4_pack',
+          'sams2_fastpack',
+          'your_pizza2_craft',
+          'your_pizza2_white'
         ],
         productList: [
           'pizza_box_sm',

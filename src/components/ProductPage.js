@@ -1,7 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductsList from '../reducers/new_products';
-import { imageUrl } from '../helpers';
+import pageElements from '../reducers/page_elements';
+import { imageUrl, language } from '../helpers';
 import ICONS from '../graphics/icons';
 import Icon from '../graphics/icon';
 
@@ -31,13 +32,13 @@ class ProductPage extends React.Component {
 					<p>{product.description[language]}
 					</p>
 					<ul className="dimensions">
-					{ Object.keys(product.dimensions)
-							.map(key => <li key={key}> <b>{key}</b> <br/> <span>{product.dimensions[key]}</span> </li>) 
+					{ Object.keys(product.dimensions).map(key => 
+							<li key={key}> <b>{pageElements[key][language]}</b> <br/> <span>{product.dimensions[key]}</span> </li>) 
 					}
 					</ul>
 					<div className="cartButtons">
-						<button className={this.props.productAdded} onClick={() => this.props.addToOrder(product.id)}>Add to order</button>
-						<button className={this.props.productRemoved} onClick={() => this.props.removeFromOrder(product.id)}>Remove from order</button>
+						<button className={this.props.productAdded} onClick={() => this.props.addToOrder(product.id)}>{pageElements.addToList[language]}</button>
+						<button className={this.props.productRemoved} onClick={() => this.props.removeFromOrder(product.id)}>{pageElements.removeFromList[language]}</button>
 					</div>
 					</div>
 				</li>

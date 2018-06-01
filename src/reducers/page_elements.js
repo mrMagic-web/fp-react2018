@@ -1,24 +1,64 @@
 module.exports = {
-    width: {
-        pl: 'szerokość',
-        en: 'width',
-        dk: 'bredde'
-    },
-    length: {
-        pl: 'długość',
-        en: 'lenght',
-        dk: 'længde'
-    },
-    heigth: {
-        pl: 'wysokość',
-        en: 'height',
-        dk: 'højde'
-    },
-    fold: {
-        pl: 'fałda',
-        en: 'fold',
-        dk: 'fold'
-    },
+  width: {
+    pl: 'szerokość',
+    en: 'width',
+    dk: 'bredde'
+  },
+  length: {
+    pl: 'długość',
+    en: 'length',
+    dk: 'længde'
+  },
+  height: {
+    pl: 'wysokość',
+    en: 'height',
+    dk: 'højde'
+  },
+  fold: {
+    pl: 'fałda',
+    en: 'fold',
+    dk: 'folden'
+  },
+  capacity: {
+    pl: 'pojemność',
+    en: 'capacity',
+    dk: 'kapacitet'
+  },
+  topWidth: {
+    pl: 'szerokość wierzchołka',
+    en: 'upper width',
+    dk: 'øvre bredde'
+  },
+  topLength: {
+    pl: 'długość wierzchołka',
+    en: 'upper length',
+    dk: 'øvre længde'
+  },
+  bottomWidth: {
+    pl: 'szerokość podstawy',
+    en: 'base width',
+    dk: 'basisbredde'
+  },
+  bottomLength: {
+    pl: 'długoość podstawy',
+    en: 'base length',
+    dk: 'bundlængde'
+  },
+  topDiameter: {
+    pl: 'średnica górna',
+    en: 'top diameter',
+    dk: 'top'
+  },
+  bottomDiameter: {
+    pl: 'średnica podstawy',
+    en: 'base diameter',
+    dk: 'nedre diameter'
+  },
+  middle: {
+    pl: 'środek',
+    en: 'middle',
+    dk: 'midte'
+  },
     window: {
         pl: 'okno',
         en: 'window',
@@ -74,6 +114,11 @@ module.exports = {
         en: 'I\'m interested',
         dk: 'Tilføj til ordre'
     },
+    moreInfo: {
+        pl: 'Więcej informacji',
+        en: 'More info',
+        dk: 'Mere info'
+    },
     yourProducts: {
         pl: 'Twoje produkty',
         en: 'Your products',
@@ -84,6 +129,16 @@ module.exports = {
         en: 'By pressing the "Discuss my order" button you will let us know which products you are interested in discussing. The goal is to accelerate your potential order.',
         dk: 'Ved at trykke på knappen "Diskuter min ordre", vil du gerne vide, hvilke produkter du er interesseret i at diskutere. Målet er at fremskynde din potentielle ordre.'
     },
+    addToList: {
+        pl: 'Dodaj do listy',
+        en: 'Add to list',
+        dk: 'Tilføj til liste'
+    },
+    removeFromList: {
+        pl: 'Usuń z listy',
+        en: 'Remove from list',
+        dk: 'Fjern fra listen'
+    }
     
 
 }
