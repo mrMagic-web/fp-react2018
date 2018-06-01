@@ -6,12 +6,16 @@ class Custom extends React.Component {
     render(){
         return (
             <div className="custom">
-                <section className="custom__section">
-                    <h1>{customDesignsTitle[language]}</h1>
-                    <p>{customDesignsCopy[language]}</p>
-                    <button>{contactUs[language]}</button>
-                </section>
-                <section className="custom__section">v</section>
+                <div className="container">   
+                    <section className="custom__section">
+                        <h2>{customDesignsTitle[language]}</h2>
+                        <p>{customDesignsCopy[language]}</p>
+                        <button className="whiteBtn">{contactUs[language]}</button>
+                    </section>
+                    <section className="custom__section">
+                        <img className="custom__section--image" alt="Fastpcak custom packagues" src="./custom-packages-1.png" />
+                    </section>
+                </div>
             </div>
         )
     }

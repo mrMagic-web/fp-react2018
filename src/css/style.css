@@ -21,25 +21,6 @@
   color: #404040;
   cursor: default;
 }
-.custom {
-  display: -ms-flexbox;
-  display: flex;
-  background-color: #00adef;
-  padding: 4rem 2rem;
-}
-.custom__section {
-  -ms-flex-preferred-size: 50%;
-      flex-basis: 50%;
-  text-align: left;
-  color: #fff;
-}
-.custom__section h1 {
-  text-align: left;
-  font-weight: 100;
-}
-.custom__section p {
-  font-size: 1.25rem;
-}
 .order-enter {
   transition: all 0.4s;
   transform: translateZ(-120%);
@@ -79,6 +60,37 @@
 }
 .selection-leave.selection-leave-active {
   opacity: 0;
+}
+.custom {
+  background-color: #00adef;
+  padding: 4rem 2rem;
+}
+.custom .container {
+  -ms-flex-align: center;
+      align-items: center;
+  height: 300px;
+  display: -ms-flexbox;
+  display: flex;
+}
+.custom__section {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+  text-align: left;
+  color: #fff;
+}
+.custom__section h2 {
+  text-align: left;
+  font-weight: 100;
+  font-family: OpenSans-Light;
+}
+.custom__section p {
+  font-size: 1.25rem;
+  line-height: 1.8rem;
+  margin: 2rem 0;
+}
+.custom__section--image {
+  width: 100%;
+  max-width: 460px;
 }
 @font-face {
   font-family: 'OpenSans-Bold';
@@ -497,6 +509,90 @@ ul.order li button {
 .order-buttons {
   margin-top: auto;
 }
+.gray,
+.white {
+  width: 22px;
+  height: 22px;
+  border: 1px solid #d3d3d3;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  margin: 0 1px;
+}
+.gray:hover,
+.white:hover {
+  box-shadow: 0px 0px 2px 0px rgba(50,50,50,0.5);
+}
+.gray {
+  margin-top: 3px;
+  background-image: url("http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg");
+}
+html {
+  font-size: 68%;
+}
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body font-size 2rem {
+  font-family: OpenSans-Light;
+}
+h1 {
+  text-align: center;
+  font-weight: normal;
+  margin: 0;
+  font-family: OpenSans-Bold;
+}
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  font-family: OpenSans-Bold;
+}
+h2 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 1.3rem;
+  font-size: 3.6rem;
+}
+h3 {
+  font-size: 3rem;
+}
+h4 {
+  font-size: 1.4rem;
+}
+.wrapper {
+  background: #fff;
+}
+.container {
+  max-width: 1260px;
+  width: 100%;
+  position: relative;
+  margin: 0 auto;
+}
+svg {
+  stroke: #404040;
+  fill: #404040;
+  display: block;
+  position: absolute;
+}
+.icon-close {
+  position: absolute;
+  z-index: 2;
+  width: 20px;
+  top: 15px;
+  right: 15px;
+  cursor: pointer;
+  transform: rotate(0deg);
+  transform-origin: 10px 10px;
+  transition: all 0.2s;
+}
+.icon-close:hover {
+  transform: rotate(90deg);
+}
 button,
 input[type=submit] {
   text-transform: uppercase;
@@ -508,7 +604,22 @@ input[type=submit] {
   transition: all 0.2s;
   position: relative;
   z-index: 2;
+  padding: 6px 25px;
   color: #00adef;
+}
+button.whiteBtn,
+input[type=submit].whiteBtn {
+  color: #fff;
+  border-color: #fff;
+}
+button.whiteBtn:hover,
+input[type=submit].whiteBtn:hover {
+  color: #00adef;
+  background-color: #fff;
+}
+button.whiteBtn:after,
+input[type=submit].whiteBtn:after {
+  background-color: #fff;
 }
 button.disabled,
 input[type=submit].disabled {
@@ -547,82 +658,4 @@ input[type=submit]:hover {
 button:hover:after,
 input[type=submit]:hover:after {
   height: 100%;
-}
-.gray,
-.white {
-  width: 22px;
-  height: 22px;
-  border: 1px solid #d3d3d3;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-direction: row;
-      flex-direction: row;
-  margin: 0 1px;
-}
-.gray:hover,
-.white:hover {
-  box-shadow: 0px 0px 2px 0px rgba(50,50,50,0.5);
-}
-.gray {
-  margin-top: 3px;
-  background-image: url("http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg");
-}
-html {
-  font-size: 68%;
-}
-body {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-size: 2rem;
-}
-h1 {
-  text-align: center;
-  font-weight: normal;
-  margin: 0;
-  font-family: OpenSans-Bold;
-}
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: normal;
-  font-family: OpenSans-Bold;
-}
-h2 {
-  text-align: center;
-  margin-top: 0;
-  margin-bottom: 2rem;
-}
-h3 {
-  font-size: 3rem;
-}
-h4 {
-  font-size: 1.4rem;
-}
-.wrapper {
-  margin: 0 auto;
-  position: relative;
-  width: 100%;
-  background: #fff;
-}
-svg {
-  stroke: #404040;
-  fill: #404040;
-  display: block;
-  position: absolute;
-}
-.icon-close {
-  position: absolute;
-  z-index: 2;
-  width: 20px;
-  top: 15px;
-  right: 15px;
-  cursor: pointer;
-  transform: rotate(0deg);
-  transform-origin: 10px 10px;
-  transition: all 0.2s;
-}
-.icon-close:hover {
-  transform: rotate(90deg);
 }

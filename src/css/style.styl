@@ -1,14 +1,16 @@
 // Import all partials
 @require '_variables.styl'
 @require '_selector.styl'
-@require '_custom.styl'
 @require './_*.styl'
     
 .wrapper
-  margin 0 auto
-  position relative
-  width 100%
   background white
+
+.container
+  max-width 1260px
+  width 100%
+  position relative
+  margin 0 auto
 
 svg
   stroke black
@@ -28,3 +30,51 @@ svg
   transition all .2s
   &:hover
     transform rotate(90deg)
+
+button, input[type=submit]
+  text-transform uppercase
+  background none
+  border 1px solid brand-primary
+  font-weight 600
+  font-size 1.5rem
+  font-family 'OpenSans-Bold'
+  transition all 0.2s
+  position relative
+  z-index 2
+  padding 6px 25px
+  color brand-primary
+  &.whiteBtn
+    color white
+    border-color white
+    &:hover
+      color brand-primary
+      background-color white
+    &:after
+      background-color white
+  &.disabled
+    color gray-light
+    background white
+    border-color gray-light
+    cursor not-allowed
+    &:hover
+      color gray-light
+    &:after
+      display none
+  &:after
+    content ''
+    z-index -1
+    display block
+    background brand-primary
+    position absolute
+    width 100%
+    height 0%
+    left 0
+    top 0
+    transition all 0.2s
+  &:hover
+    background-color brand-primary 
+    color white
+    outline 0
+    &:after
+      height 100%
+  

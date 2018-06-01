@@ -9,7 +9,7 @@ class CategorySelector extends React.Component {
 		const language = this.props.language;
 		const categories = this.props.categories;
 		return ( 
-			<div className="selector">
+			<div className="selector container">
 				<ul> 
 					{ Object.keys(categories).map((key) => 
 						<li key={key} 

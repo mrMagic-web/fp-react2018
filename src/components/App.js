@@ -7,6 +7,7 @@ import pageElements from '../reducers/page_elements';
 import productsList from '../reducers/new_products';
 import categories from '../reducers/product_categories';
 import Product from './Product';
+import SampleProjects from './SampleProjects';
 import Custom from './Custom';
 import Form from './Form';
 import ProductPage from './ProductPage';
@@ -109,7 +110,7 @@ class App extends React.Component {
 	render() {
 
 		const categoryProducts =  this.state.categories[this.state.selectedCat].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
-	    const cats = this.state.selectedCat === 'all' ? productsList : categoryProducts;
+	  const cats = this.state.selectedCat === 'all' ? productsList : categoryProducts;
 		const imageGray = this.state.gray ? "_gray": "";
 		const productAdded = this.state.added[this.props.params.productId] ? 'disabled' : '';
 		const productRemoved = this.state.added[this.props.params.productId] ? '' : 'disabled';
@@ -126,7 +127,7 @@ class App extends React.Component {
 					{openProduct}
 				</CSSTransitionGroup>
 
-				<div className="menu">
+				<div className="menu container">
 					<CSSTransitionGroup className="products selection" component="ul" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
 						{ Object.keys(cats).map(key =>  
 							<Product open={this.state.open} 
@@ -138,6 +139,7 @@ class App extends React.Component {
 					</CSSTransitionGroup>
 				</div>
 				<Custom />
+				<SampleProjects />
 				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} language={this.state.language} contact={this.contact}/>
 				<Modal open={this.state.modalOpen} onClose={this.closeModal} little>
 					<Form onSubmit={fields => this.onSubmit(fields)} order={this.state.order} products={this.state.products} closeModal={this.closeModal} />
