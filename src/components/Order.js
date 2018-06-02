@@ -19,6 +19,7 @@ class Order extends React.Component {
 			<div>
 				<div className="order-wrap">
 					<h4>{pageElements.orderTitle[this.props.language]}</h4>
+					{/* <br><small>{pageElements.yourProductsIntro[this.props.language]}</small> */}
 					<CSSTransitionGroup className="order"component="ul" transitionName="order" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
 						{orderIds.map(this.renderOrder)}
 					</CSSTransitionGroup>
