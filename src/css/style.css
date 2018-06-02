@@ -410,6 +410,19 @@ ul.order li button {
   color: #fff;
   padding: 10px;
 }
+.products .product .product-hover button:after {
+  background-color: #0079a7;
+}
+.products .product .product-hover button.disabled {
+  opacity: 0.4;
+  color: brand-primart;
+  background: none;
+}
+.products .product .product-hover button.disabled:hover {
+  opacity: 0.4;
+  color: brand-primart;
+  background: none;
+}
 .products .product:hover .product-hover {
   display: -ms-flexbox;
   display: flex;
@@ -419,6 +432,9 @@ ul.order li button {
   background-color: #00adef;
   z-index: 4;
   opacity: 0.7;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  padding: 15px;
   top: 0;
   left: 0;
   -ms-flex-pack: center;

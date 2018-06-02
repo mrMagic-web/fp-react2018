@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM  from 'react-dom';
-import { moreInfo } from '../reducers/page_elements';
+import { moreInfo, addToList } from '../reducers/page_elements';
 import { imageUrl, language } from '../helpers';
 import ProductPage from './ProductPage';
 
@@ -56,8 +56,11 @@ class Product extends React.Component {
 		}
 
 		return (
-			<li className="product" onClick={this.openProduct}>
-				<div className="product-hover"><button>{moreInfo[language]}</button></div>
+			<li className="product" >
+				<div className="product-hover">
+					<button onClick={this.openProduct}>{moreInfo[language]}</button>
+					<button className={productAdded} onClick={() => this.props.addToOrder(details.id)}>{ addToList[language] }</button>
+				</div>
 				<div className="clickable">
 					<img alt={details.id} src={`${imageUrl}/thumbs/${details.id}${imageGray}.jpg`} />
 					<h4 className="product-name">{details.name[language]}</h4>
