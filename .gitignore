@@ -4,7 +4,7 @@ package-lock.json
 security-rules.json
 npm-debug.log
 .DS_Store
-
+.htaccess
 # IntelliJ
 *.iml
 /.idea

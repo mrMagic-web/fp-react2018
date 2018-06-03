@@ -3,20 +3,27 @@
   padding 4rem 2rem
   .container
     align-items center
-    height 300px
     display: flex
   &__section
     flex-basis 50%
     text-align left     
     color white
+    @media mobile
+      flex-basis auto
     h2 
       text-align left 
       font-weight 100
       font-family OpenSans-Light
+      @media mobile
+        font-size 2.2rem
+        line-height: 2.6rem
     p
-      font-size 1.25rem
+      font-size 1.45rem
       line-height: 1.8rem
       margin 2rem 0
+      @media mobile
+        font-size 1.4rem
+        line-height 1.8rem
     &--image
       width 100%
       max-width 460px

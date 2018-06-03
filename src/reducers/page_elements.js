@@ -96,7 +96,7 @@ module.exports = {
     },
     customDesignsCopy: {
         pl: 'Twój biznes wymaga nowatorskich rozwiązań? Dobrze trafiłeś. Zaprojektujrmy u stworzymy opakowania o niestandardowych wzorach, kształtach i rozmiarach',
-        en: 'Does your business require unconventional packaging needs?We’ve got you covered. We design and create packages with custom designs, shapes and sizes',
+        en: 'Does your business require unconventional packaging needs? We\'ve got you covered. We design and create packages with custom designs, shapes and sizes',
         dk: 'Kræver din forretning innovative løsninger? Du er heldig, at du har valgt os. Vi vil udarbejde et særligt projekt til dig og skabe emballage med unikke mønstre, former og størrelser.'
     },
     contactUs: {

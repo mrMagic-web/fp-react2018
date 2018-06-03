@@ -2,7 +2,9 @@
 @require '_variables.styl'
 @require '_selector.styl'
 @require './_*.styl'
-    
+
+body, html
+  min-width minWidth
 .wrapper
   background white
 
@@ -11,7 +13,7 @@
   width 100%
   position relative
   margin 0 auto
-
+    
 svg
   stroke black
   fill black
@@ -30,6 +32,8 @@ svg
   transition all .2s
   &:hover
     transform rotate(90deg)
+.sample
+  padding 4rem 2rem
 
 button, input[type=submit]
   text-transform uppercase
