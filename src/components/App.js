@@ -9,6 +9,7 @@ import categories from '../reducers/product_categories';
 import Product from './Product';
 import SampleProjects from './SampleProjects';
 import Custom from './Custom';
+import TopNavbar from './TopNavbar';
 import Form from './Form';
 import ProductPage from './ProductPage';
 import base from '../base';
@@ -116,7 +117,8 @@ class App extends React.Component {
 		const productRemoved = this.state.added[this.props.params.productId] ? '' : 'disabled';
 		const openProduct = this.state.openProd && this.props.params.productId ? ( <ProductPage details={this.state.products[this.props.params.productId]} closeProduct={this.closeProduct} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} viewWhite={this.viewWhite} viewGray={this.viewGray} language={this.state.language} imageGray={imageGray} productAdded={productAdded} productRemoved={productRemoved} /> ) : '';
 		return (
-			<div className="wrapper">	
+			<div className="wrapper">
+				<TopNavbar />	
 				<CategorySelector categories={this.state.categories} 
 								  selectCategory={this.selectCategory}
 								  selectedCat={this.state.selectedCat}

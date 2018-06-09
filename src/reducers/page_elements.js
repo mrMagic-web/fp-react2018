@@ -138,7 +138,28 @@ module.exports = {
         pl: 'Usuń z listy',
         en: 'Remove from list',
         dk: 'Fjern fra listen'
+    },
+    mainMenu: {
+        home: {
+            pl: 'Strona główna',
+            en: 'Home',
+            dk: 'Home'
+        },
+        about: {
+            pl: 'O nas',
+            en: 'About us',
+            dk: 'Om os'
+        },
+        services: {
+            pl: 'Usługi',
+            en: 'Services',
+            dk: 'Veres services'
+        },
+        contact: {
+            pl: 'Kontakt',
+            en: 'Contact',
+            dk: 'Kontakt os'
+        }
     }
-    
 
 }
