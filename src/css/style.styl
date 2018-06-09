@@ -7,6 +7,7 @@ body, html
   min-width minWidth
 .wrapper
   background white
+  overflow-x hidden
 
 .container
   max-width 1260px
@@ -19,6 +20,10 @@ svg
   fill black
   display: block;
   position: absolute;
+
+.hide-mobile
+  @media mobile
+    display none
 
 .icon-close
   position absolute

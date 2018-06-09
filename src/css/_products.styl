@@ -26,8 +26,7 @@
     text-align left
     padding space
     margin space
-    flex 1 1 267px
-    max-width 267px
+    flex 1 1 276px
     display flex
     position relative
     flex-direction column
@@ -100,6 +99,8 @@
     position relative
     flex-wrap wrap
     flex-direction row
+    @media mobile
+      flex-direction column
     .icon-close
       position absolute
       z-index 2
@@ -110,6 +111,10 @@
     .image 
       width 40%
       padding-right 30px
+      @media mobile
+        width 100%
+        max-width 360px
+        margin auto
     .colors
       top 15px !important
       right 15px !important
@@ -122,8 +127,14 @@
       display flex
       flex-direction column
       justify-content center
-      button
-        margin-right 10px
+      @media mobile
+        width 100%
+      .cart-buttons
+        display flex
+        @media mobile
+          flex-direction column
+        button
+          margin 0 10px 5px 0
       .dimensions 
         max-width 300px
         display flex
@@ -131,6 +142,9 @@
         font-size 1.2rem
         align-content flex-end
         margin-bottom: 25px;
+        @media mobile
+          max-width 100%
+          padding-left: 0
         li 
           flex 1 1 auto
           display flex
@@ -155,9 +169,8 @@
     img
       height auto 
       width 100%
-      max-height 380px    
+      max-height 300px    
     
-
 .order-buttons
   margin-top auto 
 

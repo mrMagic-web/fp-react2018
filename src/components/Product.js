@@ -59,7 +59,7 @@ class Product extends React.Component {
 			<li className="product" >
 				<div className="product-hover">
 					<button onClick={this.openProduct}>{moreInfo[language]}</button>
-					<button className={productAdded} onClick={() => this.props.addToOrder(details.id)}>{ addToList[language] }</button>
+					<button className={"hide-mobile " + productAdded} onClick={() => this.props.addToOrder(details.id)}>{ addToList[language] }</button>
 				</div>
 				<div className="clickable">
 					<img alt={details.id} src={`${imageUrl}/thumbs/${details.id}${imageGray}.jpg`} />

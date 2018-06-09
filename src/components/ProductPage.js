@@ -21,7 +21,7 @@ class ProductPage extends React.Component {
 		const imageGray = this.props.imageGray;
 		const language = this.props.language;
 		return (
-				<li className="expand">
+				<li className="expand container">
 					<div onClick={this.props.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
 					<div className="image">
 						<img alt={product.name[language]} src={`${imageUrl}${product.id}${imageGray}.jpg`} />
@@ -32,11 +32,12 @@ class ProductPage extends React.Component {
 					<p>{product.description[language]}
 					</p>
 					<ul className="dimensions">
+					{console.log(product.dimensions)}
 					{ Object.keys(product.dimensions).map(key => 
-							<li key={key}> <b>{pageElements[key][language]}</b> <br/> <span>{product.dimensions[key]}</span> </li>) 
+							<li key={key}> <b>{ pageElements[key][language]}</b> <br/> <span>{product.dimensions[key]}</span> </li>) 
 					}
 					</ul>
-					<div className="cartButtons">
+					<div className="cart-buttons">
 						<button className={this.props.productAdded} onClick={() => this.props.addToOrder(product.id)}>{pageElements.addToList[language]}</button>
 						<button className={this.props.productRemoved} onClick={() => this.props.removeFromOrder(product.id)}>{pageElements.removeFromList[language]}</button>
 					</div>

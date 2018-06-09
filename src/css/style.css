@@ -132,7 +132,7 @@
   display: flex;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  max-width: 370px;
+  max-width: 320px;
 }
 .contact .current-order .order-product {
   width: 60px;
@@ -152,9 +152,10 @@
   padding: 10px;
 }
 .contact .contact-form input {
-  margin: 0 0 20px;
+  margin: 0 0 15px;
   text-align: center;
   padding: 5px;
+  font-size: 18px;
 }
 article,
 aside,
@@ -408,9 +409,8 @@ ul.order li button {
   text-align: left;
   padding: 15px;
   margin: 15px;
-  -ms-flex: 1 1 267px;
-      flex: 1 1 267px;
-  max-width: 267px;
+  -ms-flex: 1 1 276px;
+      flex: 1 1 276px;
   display: -ms-flexbox;
   display: flex;
   position: relative;
@@ -522,6 +522,12 @@ ul.order li button {
   -ms-flex-direction: row;
       flex-direction: row;
 }
+@media only screen and (max-width: 768px) {
+  .products .expand {
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+}
 .products .expand .icon-close {
   position: absolute;
   z-index: 2;
@@ -532,6 +538,13 @@ ul.order li button {
 .products .expand .image {
   width: 40%;
   padding-right: 30px;
+}
+@media only screen and (max-width: 768px) {
+  .products .expand .image {
+    width: 100%;
+    max-width: 360px;
+    margin: auto;
+  }
 }
 .products .expand .colors {
   top: 15px !important;
@@ -551,8 +564,23 @@ ul.order li button {
   -ms-flex-pack: center;
       justify-content: center;
 }
-.products .expand .description button {
-  margin-right: 10px;
+@media only screen and (max-width: 768px) {
+  .products .expand .description {
+    width: 100%;
+  }
+}
+.products .expand .description .cart-buttons {
+  display: -ms-flexbox;
+  display: flex;
+}
+@media only screen and (max-width: 768px) {
+  .products .expand .description .cart-buttons {
+    -ms-flex-direction: column;
+        flex-direction: column;
+  }
+}
+.products .expand .description .cart-buttons button {
+  margin: 0 10px 5px 0;
 }
 .products .expand .description .dimensions {
   max-width: 300px;
@@ -564,6 +592,12 @@ ul.order li button {
   -ms-flex-line-pack: end;
       align-content: flex-end;
   margin-bottom: 25px;
+}
+@media only screen and (max-width: 768px) {
+  .products .expand .description .dimensions {
+    max-width: 100%;
+    padding-left: 0;
+  }
 }
 .products .expand .description .dimensions li {
   -ms-flex: 1 1 auto;
@@ -597,7 +631,7 @@ ul.order li button {
 .products .expand img {
   height: auto;
   width: 100%;
-  max-height: 380px;
+  max-height: 300px;
 }
 .order-buttons {
   margin-top: auto;
@@ -662,6 +696,7 @@ html {
 }
 .wrapper {
   background: #fff;
+  overflow-x: hidden;
 }
 .container {
   max-width: 1260px;
@@ -674,6 +709,11 @@ svg {
   fill: #404040;
   display: block;
   position: absolute;
+}
+@media only screen and (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
 }
 .icon-close {
   position: absolute;

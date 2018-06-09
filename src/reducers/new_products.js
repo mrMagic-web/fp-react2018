@@ -358,8 +358,8 @@ module.exports = {
             dk: 'Burger boks stor'
         },
         description: {
-            pl: 'Pudełko burger duże. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
-            en: 'Burger box large. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
+            pl: 'Pudełko burger Duże. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
+            en: 'Burger box Large. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.',
             dk: 'En kasse med burger stor. wykonany z papieru o grubości x g/m2. Torba jest w stanie wytrzymać wagę do 1,5kg cukierków.'
         },
         color: {
@@ -368,10 +368,10 @@ module.exports = {
         },
         dimensions: {
             width: 150,
-            wength: 150,
+            length: 150,
+            height: 80,
             bottomWidth: 110,
-            bottomLength: 120,
-            height: 80
+            bottomLength: 120
         }
     },
     burger_pocket: {
