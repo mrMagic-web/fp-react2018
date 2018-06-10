@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { mainMenu } from '../reducers/page_elements';
 import { language } from '../helpers';
+import ICONS from '../graphics/icons';
+import Icon from '../graphics/icon';
 
 class TopNavbar extends Component {
   toggleNavbar() {
@@ -13,16 +15,15 @@ class TopNavbar extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="topnav-area container">
+        <div className="logo-area"><img src="./img/logo-fastpack.png" alt="Logo fastpack" /></div>
         <div className="topnav" id="myTopnav">
-          <a href="#home" className="active">{ mainMenu.home[language] }</a>
+          <a href="#home">{ mainMenu.home[language] }</a>
           <a href="#news">{ mainMenu.about[language] }</a>
           <a href="#contact">{ mainMenu.services[language] }</a>
           <a href="#about">{ mainMenu.contact[language] }</a>
-          <a className="icon" onClick={ () => this.toggleNavbar()}>
-            <i className="fa fa-bars">-</i>
-          </a>
         </div>
+        <div className="menu-close" onClick={ () => this.toggleNavbar()}><Icon icon={ ICONS.MENU } /> </div>
       </div>
     );
   }
