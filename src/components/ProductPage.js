@@ -19,7 +19,6 @@ class ProductPage extends React.Component {
 		const white = product.color.white ? "white": "" ; 
 		const gray = product.color.gray ? "gray": "" ;
 		const imageGray = this.props.imageGray;
-		const language = this.props.language;
 		return (
 				<li className="expand container">
 					<div onClick={this.props.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>

@@ -33,10 +33,9 @@ class App extends React.Component {
 		products: {},
 		order: {},
 		categories: {},
-		selectedCat: 'all',
+		selectedCat: localStorage.getItem('categorySelection') || 'all',
 		added: {},
 		modalOpen: false,
-		language: 'en',
 		openProd: true,
 		gray: false,
 		fields: {}
@@ -115,14 +114,13 @@ class App extends React.Component {
 		const imageGray = this.state.gray ? "_gray": "";
 		const productAdded = this.state.added[this.props.params.productId] ? 'disabled' : '';
 		const productRemoved = this.state.added[this.props.params.productId] ? '' : 'disabled';
-		const openProduct = this.state.openProd && this.props.params.productId ? ( <ProductPage details={this.state.products[this.props.params.productId]} closeProduct={this.closeProduct} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} viewWhite={this.viewWhite} viewGray={this.viewGray} language={this.state.language} imageGray={imageGray} productAdded={productAdded} productRemoved={productRemoved} /> ) : '';
+		const openProduct = this.state.openProd && this.props.params.productId ? ( <ProductPage details={this.state.products[this.props.params.productId]} closeProduct={this.closeProduct} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} viewWhite={this.viewWhite} viewGray={this.viewGray} imageGray={imageGray} productAdded={productAdded} productRemoved={productRemoved} /> ) : '';
 		return (
 			<div className="wrapper">
 				<TopNavbar />	
 				<CategorySelector categories={this.state.categories} 
 								  selectCategory={this.selectCategory}
 								  selectedCat={this.state.selectedCat}
-								  language={this.state.language}
 								  />
 				
 				<CSSTransitionGroup className="products selection" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
@@ -134,7 +132,7 @@ class App extends React.Component {
 						{ Object.keys(cats).map(key =>  
 							<Product open={this.state.open} 
 							addToOrder={this.addToOrder} 
-							added={this.state.added} language={this.state.language}
+							added={this.state.added} 
 							removeFromOrder={this.removeFromOrder}  
 							openProduct={this.state.openProduct}
 							details={this.state.products[key]} key={key} /> )}
@@ -142,7 +140,7 @@ class App extends React.Component {
 				</div>
 				<Custom />
 				<SampleProjects category={this.state.selectedCat}/>
-				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} language={this.state.language} contact={this.contact}/>
+				<Order key="Order" params={this.state.params} products={this.state.products} order={this.state.order} removeFromOrder={this.removeFromOrder} contact={this.contact}/>
 				<Modal open={this.state.modalOpen} onClose={this.closeModal} little>
 					<Form onSubmit={fields => this.onSubmit(fields)} order={this.state.order} products={this.state.products} closeModal={this.closeModal} />
 				</Modal>

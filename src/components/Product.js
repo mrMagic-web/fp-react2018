@@ -39,7 +39,6 @@ class Product extends React.Component {
 		const imageGray = this.state.gray ? "_gray": "";
 		const productAdded = this.props.added[details.id] ? 'disabled' : '';
 		const productRemoved = this.props.added[details.id] ? '' : 'disabled';
-		const language = this.props.language;
 
 		if(this.state.open) {
 			return <ProductPage 
@@ -48,7 +47,6 @@ class Product extends React.Component {
 					addToOrder={this.props.addToOrder}
 					removeFromOrder={this.props.removeFromOrder}
 					viewWhite={this.viewWhite} viewGray={this.viewGray}
-					language={this.props.language}
 					imageGray={imageGray}
 					productAdded={productAdded} productRemoved={productRemoved}
 				/>

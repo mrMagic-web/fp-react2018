@@ -40,7 +40,7 @@ class Custom extends React.Component {
         return (
           <div className="sample">
             <div className="container">
-              {/* <h2>{sampleProjects[language]}</h2> */}
+              <h2>{sampleProjects[language]}</h2>
               <Slider {...settings}>
                 {categories[this.props.category].portfolio.map(prod => <img alt={prod} key={prod} src={`http://www.fastpack.dk/wp-content/uploads/${prod}.jpg`} />)}
               </Slider>
