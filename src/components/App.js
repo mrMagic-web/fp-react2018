@@ -117,7 +117,7 @@ class App extends React.Component {
 		const openProduct = this.state.openProd && this.props.params.productId ? ( <ProductPage details={this.state.products[this.props.params.productId]} closeProduct={this.closeProduct} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} viewWhite={this.viewWhite} viewGray={this.viewGray} imageGray={imageGray} productAdded={productAdded} productRemoved={productRemoved} /> ) : '';
 		return (
 			<div className="wrapper">
-				<TopNavbar />	
+				<header className="navbar"><TopNavbar /></header>	
 				<CategorySelector categories={this.state.categories} 
 								  selectCategory={this.selectCategory}
 								  selectedCat={this.state.selectedCat}

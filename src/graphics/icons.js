@@ -2,7 +2,8 @@
 const ICONS = {
   CLOSE: '<svg version="1" viewBox="0 0 48 48"><path d="M28 24L47 5a3 3 0 1 0-4-4L24 20 5 1a3 3 0 1 0-4 4l19 19L1 43a3 3 0 1 0 4 4l19-19 19 19a3 3 0 0 0 4 0v-4L28 24z"/></svg>',
   DOWN: '<svg version="1" viewBox="0 0 306 306"><path d="M270 59L153 176 36 59 0 94l153 153L306 94z"/></svg>',
-  MENU: '<svg version="1 viewBox="0 0 448 512"><path d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"/></svg>'
+  CARRET_DOWN: '<svg version="1" viewBox="0 0 292 292"><path d="M287 69c-4-3-8-5-13-5H18c-5 0-9 2-13 5-3 4-5 8-5 13s2 9 5 13l128 128c4 4 8 5 13 5s9-1 13-5L287 95c4-4 5-8 5-13s-1-9-5-13z"/></svg>',
+  MENU: '<svg id="Слой_1" version="1" viewBox="0 0 139 139" xmlns="http://www.w3.org/2000/svg"><style>.st0{stroke-width:6;stroke-miterlimit:10}</style><path class="st0" id="XMLID_6_" d="M27 46h86"/><path class="st0" id="XMLID_9_" d="M27 93h86"/><path class="st0" id="XMLID_8_" d="M27 70h86"/></svg>',
 };
 export default ICONS;
 
