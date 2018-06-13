@@ -38,8 +38,19 @@
   margin-left auto
   align-items center
   position: relative
+  #langDropdown
+    span 
+      width 17px !important
+      margin -5px 3px 0 0
+    a
+      padding 9px
+      &:last-of-type
+        margin-left: -5px 
   .languageSelector
     position relative
+    span 
+      width 17px !important
+      margin -5px 3px 0 0
     svg
       position absolute
       right -2px
@@ -73,6 +84,10 @@
 @media mobile
   .topnav-area 
     flex-direction column
+    #langDropdown
+      position relative
+      top 0
+      right 0
     .menu-close
       display block  
     .topnav
@@ -80,11 +95,12 @@
       width 100%
       text-align center
       flex-direction column
-      height 0
       transition: .5s ease-in-out;
       &.icon
         float right
         display block
+      a
+        padding 8px 16px
 
 @media mobile
   .topnav

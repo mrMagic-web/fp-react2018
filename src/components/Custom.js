@@ -1,9 +1,9 @@
 import React from 'react';
 import {customDesignsTitle, customDesignsCopy, contactUs} from '../reducers/page_elements';
-import { language } from '../helpers';
 
 class Custom extends React.Component {
     render(){
+        const language = this.props.language;
         return (
             <div className="custom">
                 <div className="container">   

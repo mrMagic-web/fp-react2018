@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ProductsList from '../reducers/new_products';
 import pageElements from '../reducers/page_elements';
-import { imageUrl, language } from '../helpers';
+import { imageUrl } from '../helpers';
 import ICONS from '../graphics/icons';
 import Icon from '../graphics/icon';
 
@@ -19,6 +19,7 @@ class ProductPage extends React.Component {
 		const white = product.color.white ? "white": "" ; 
 		const gray = product.color.gray ? "gray": "" ;
 		const imageGray = this.props.imageGray;
+		const language = this.props.language;
 		return (
 				<li className="expand container">
 					<div onClick={this.props.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
@@ -31,7 +32,6 @@ class ProductPage extends React.Component {
 					<p>{product.description[language]}
 					</p>
 					<ul className="dimensions">
-					{console.log(product.dimensions)}
 					{ Object.keys(product.dimensions).map(key => 
 							<li key={key}> <b>{ pageElements[key][language]}</b> <br/> <span>{product.dimensions[key]}</span> </li>) 
 					}

@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM  from 'react-dom';
 import { moreInfo, addToList } from '../reducers/page_elements';
-import { imageUrl, language } from '../helpers';
+import { imageUrl } from '../helpers';
 import ProductPage from './ProductPage';
 
 class Product extends React.Component {
@@ -39,6 +39,7 @@ class Product extends React.Component {
 		const imageGray = this.state.gray ? "_gray": "";
 		const productAdded = this.props.added[details.id] ? 'disabled' : '';
 		const productRemoved = this.props.added[details.id] ? '' : 'disabled';
+		const language = this.props.language;
 
 		if(this.state.open) {
 			return <ProductPage 
@@ -48,6 +49,7 @@ class Product extends React.Component {
 					removeFromOrder={this.props.removeFromOrder}
 					viewWhite={this.viewWhite} viewGray={this.viewGray}
 					imageGray={imageGray}
+					language={this.props.language}
 					productAdded={productAdded} productRemoved={productRemoved}
 				/>
 			

@@ -1,7 +1,6 @@
 import React from 'react';
 import {sampleProjects} from '../reducers/page_elements';
 import categories from '../reducers/product_categories';
-import { language } from '../helpers';
 import Slider from "react-slick";
 
 import "../../node_modules/slick-carousel/slick/slick.css";
@@ -9,7 +8,8 @@ import "../../node_modules/slick-carousel/slick/slick-theme.css";
 
 class Custom extends React.Component {
     render(){
-        var settings = {
+      const language = this.props.language;
+      const settings = {
             dots: false,
             autoplay: true,
             infinite: true,

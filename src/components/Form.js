@@ -2,7 +2,7 @@ import React from 'react';
 import ICONS from '../graphics/icons';
 import Icon from '../graphics/icon';
 import ReactTooltip from 'react-tooltip'
-import { language, imageUrl} from '../helpers';
+import { imageUrl} from '../helpers';
 
 class Form extends React.Component {
 	
@@ -38,12 +38,12 @@ class Form extends React.Component {
 	renderOrder = e => {
 		const product = this.props.products[e];
 		const back = imageUrl + 'thumbs/' +product.id + '.jpg';
-		const tip = product.name[language];
+		const tip = product.name[this.props.language];
 		return <div data-tip={tip} style={ {backgroundImage: `url(${back})` }} className="order-product" key={product.id} ></div>;
 	}
 	onSubmit(e) {
 		e.preventDefault();
-		const order = Object.keys(this.props.order).map( e => this.props.products[e].name[language]);
+		const order = Object.keys(this.props.order).map( e => this.props.products[e].name[this.props.language]);
 
 		window.$crisp.push(["do", "chat:open"]);
 		setTimeout( window.$crisp.push(["do", "message:send", ['text', `Hello ${this.state.name}. You have chosen following products`]]), 100);
@@ -55,6 +55,7 @@ class Form extends React.Component {
 
 	render(){
 		const order = Object.keys(this.props.order);
+
 		return( 
 			<div className="wrapper contact">	
 				<div className="current-order">{order.map( e => this.renderOrder(e))}</div>
