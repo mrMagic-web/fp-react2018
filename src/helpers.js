@@ -9,6 +9,6 @@ export const flags = {
 }
 
 function getLanguage(){
-  var browserLang = document.getElementsByTagName('html')[0].attributes.html || "en-GB";
+  var browserLang = document.getElementsByTagName('html')[0].attributes.html || "dk-DK";
   return browserLang.split('-')[0];
 }

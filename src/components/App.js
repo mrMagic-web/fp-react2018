@@ -10,7 +10,7 @@ import SampleProjects from './SampleProjects';
 import Custom from './Custom';
 import TopNavbar from './TopNavbar';
 import Form from './Form';
-import base from '../base';
+// import base from '../base';
 import { language } from '../helpers';
 import Modal from 'react-responsive-modal';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
@@ -32,7 +32,7 @@ class App extends React.Component {
 		products: {},
 		order: {},
 		categories: {},
-		appLanguage: "DK",
+		appLanguage: "dk",
 		selectedCat: localStorage.getItem('categorySelection') || 'all',
 		added: {},
 		modalOpen: false,
@@ -41,11 +41,11 @@ class App extends React.Component {
  
 	componentWillMount() {
 				
-		//this runs before the app is rendered
-        this.ref = base.syncState(`${this.props.params.storeId}/product`, {
-            context: this,
-            state: 'products'
-        });
+		// //this runs before the app is rendered
+        // this.ref = base.syncState(`${this.props.params.storeId}/product`, {
+        //     context: this,
+        //     state: 'products'
+        // });
         //check if there is any order in localStorage
         const localStorageRef = localStorage.getItem(`order-${this.props.params.productId}`);
         const categorySelected = categories[this.props.params.selectedCat];
@@ -55,7 +55,7 @@ class App extends React.Component {
 			products: productsList,
 			categories: categories,
 			selectedCat: validCategory,
-			appLanguage: language
+			appLanguage: this.props.params.appLanguage || language 
 		});
 		
 		//update App component's order state
@@ -64,22 +64,22 @@ class App extends React.Component {
         		order: JSON.parse(localStorageRef),
         		added: JSON.parse(localStorageRef)
         	}); 
-        }
-
-    }
-    componentWillUnmount(){
-    	base.removeBinding(this.ref);
-    }
+				}
+		}
+    // componentWillUnmount(){
+    // 	base.removeBinding(this.ref);
+    // }
     componentWillUpdate(nextProps, nextState) {
     	localStorage.setItem(`order-${this.props.params.productId}`, JSON.stringify(nextState.order)); // when adding to local storege we cannot use object. we turn it into string
     	localStorage.setItem(`added-${this.props.params.productId}`, JSON.stringify(nextState.added)); // when adding to local storege we cannot use object. we turn it into string
     }
     selectCategory(key) {
     	this.setState({selectedCat: key});
-    	this.context.router.transitionTo(`/${key}`);
+    	this.context.router.transitionTo(`/${this.state.appLanguage}/${key}`);
 		}
 		changeLanguage(lang) {
 			this.setState({appLanguage: lang});
+			this.context.router.transitionTo(`/${lang}`);
 		}
 	addToOrder(key) {
 		const order = {...this.state.order}, added = {...this.state.added}; // take a copy of own state
@@ -97,7 +97,7 @@ class App extends React.Component {
 		this.setState({modalOpen: true});
 	}
 	transitionOnClose(){
-		this.context.router.transitionTo(`/all`);
+		this.context.router.transitionTo(`/${this.state.appLanguage}/all`);
 	}
 	closeModal() {
 		this.setState({modalOpen: false});
@@ -106,10 +106,8 @@ class App extends React.Component {
 		this.setState({fields});
 	}
 	render() {
-
 		const categoryProducts =  this.state.categories[this.state.selectedCat].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
 	  const cats = this.state.selectedCat === 'all' ? productsList : categoryProducts;
-
 			return (
 			<div className="wrapper">
 				<header className="navbar"><TopNavbar language={this.state.appLanguage} changeLanguage={this.changeLanguage} /></header>

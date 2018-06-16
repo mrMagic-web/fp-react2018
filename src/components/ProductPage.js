@@ -21,7 +21,7 @@ class ProductPage extends React.Component {
 		const gray = product.color.gray ? "gray": "" ;
 		const language = this.props.language;
 		return (
-				<li className="expand container">
+				<li className={`expand container ${this.props.param ? 'top-product' : '' }`}>
 					<div onClick={this.props.closeProduct}><Icon icon={ICONS.CLOSE} className="icon-close" /></div>
 					<div className="image">
 						<img alt={product.name[language]} src={`${imageUrl}${product.id}${imageGray}.jpg`} />

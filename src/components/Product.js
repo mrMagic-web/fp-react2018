@@ -13,11 +13,11 @@ class Product extends React.Component {
 		this.viewWhite = this.viewWhite.bind(this);
 		this.openProduct = this.openProduct.bind(this);
 		this.closeProduct = this.closeProduct.bind(this);
-		this.state = {
-			gray: false, 
-			open: false
-		}
 		this.baseState = this.state;
+	}
+	state = {
+		gray: false, 
+		open: false
 	}
 	componentDidMount() {
 		this.setState({ open: this.props.param === this.props.details.id })
@@ -35,7 +35,9 @@ class Product extends React.Component {
 	}
 	closeProduct(){ 
 		this.setState({ open: false});
-		this.props.transitionOnClose();
+		if(this.props.param === this.props.details.id) {
+			this.props.transitionOnClose();
+		}
 	}
 	render(){
 		const details = this.props.details;
@@ -56,6 +58,7 @@ class Product extends React.Component {
 					viewWhite={this.viewWhite} 
 					viewGray={this.viewGray}
 					gray={this.state.gray}
+					param={this.props.param}
 					productAdded={productAdded} 
 					productRemoved={productRemoved}
 				/>
