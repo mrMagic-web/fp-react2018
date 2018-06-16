@@ -10,7 +10,6 @@ import SampleProjects from './SampleProjects';
 import Custom from './Custom';
 import TopNavbar from './TopNavbar';
 import Form from './Form';
-import ProductPage from './ProductPage';
 import base from '../base';
 import { language } from '../helpers';
 import Modal from 'react-responsive-modal';
@@ -23,11 +22,10 @@ class App extends React.Component {
 		this.addToOrder = this.addToOrder.bind(this); 
 		this.removeFromOrder = this.removeFromOrder.bind(this); 
 		this.selectCategory = this.selectCategory.bind(this);
-		// this.openProduct = this.openProduct.bind(this); 
 		this.changeLanguage = this.changeLanguage.bind(this);
-		this.closeProduct = this.closeProduct.bind(this);
 		this.closeModal = this.closeModal.bind(this);
 		this.contact = this.contact.bind(this);
+		this.transitionOnClose = this.transitionOnClose.bind(this);
 	}
 	
 	state = {
@@ -38,8 +36,6 @@ class App extends React.Component {
 		selectedCat: localStorage.getItem('categorySelection') || 'all',
 		added: {},
 		modalOpen: false,
-		openProd: true,
-		gray: false,
 		fields: {}
 	}
  
@@ -97,13 +93,11 @@ class App extends React.Component {
 		delete order[key]; //update or add new number of ordered products
 		this.setState({ order,  added}); // update state, ES short for {order: this.order}
 	}
-
-	closeProduct(){ 
-		this.context.router.transitionTo(`/all`);	
-	}
 	contact() {
 		this.setState({modalOpen: true});
-
+	}
+	transitionOnClose(){
+		this.context.router.transitionTo(`/all`);
 	}
 	closeModal() {
 		this.setState({modalOpen: false});
@@ -115,22 +109,16 @@ class App extends React.Component {
 
 		const categoryProducts =  this.state.categories[this.state.selectedCat].productList.reduce((acc, cur) => { acc[cur] = productsList[cur] ; return acc;} ,{});
 	  const cats = this.state.selectedCat === 'all' ? productsList : categoryProducts;
-		const imageGray = this.state.gray ? "_gray": "";
-		const productAdded = this.state.added[this.props.params.productId] ? 'disabled' : '';
-		const productRemoved = this.state.added[this.props.params.productId] ? '' : 'disabled';
-		const openProduct = this.state.openProd && this.props.params.productId ? ( <ProductPage details={this.state.products[this.props.params.productId]} closeProduct={this.closeProduct} addToOrder={this.addToOrder} removeFromOrder={this.removeFromOrder} viewWhite={this.viewWhite} viewGray={this.viewGray} imageGray={imageGray} productAdded={productAdded} productRemoved={productRemoved} /> ) : '';
-		return (
+
+			return (
 			<div className="wrapper">
-				<header className="navbar"><TopNavbar language={this.state.appLanguage} changeLanguage={this.changeLanguage} /></header>	
+				<header className="navbar"><TopNavbar language={this.state.appLanguage} changeLanguage={this.changeLanguage} /></header>
+
 				<CategorySelector categories={this.state.categories} 
 								  selectCategory={this.selectCategory}
 									selectedCat={this.state.selectedCat}
 									language={this.state.appLanguage}
 								  />
-				
-				<CSSTransitionGroup className="products selection" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
-					{openProduct}
-				</CSSTransitionGroup>
 
 				<div className="menu container">
 					<CSSTransitionGroup className="products selection" component="ul" transitionName="selection" transitionEnterTimeout={400} transitionLeaveTimeout={400}>
@@ -138,9 +126,14 @@ class App extends React.Component {
 							<Product open={this.state.open} 
 							addToOrder={this.addToOrder} 
 							added={this.state.added} 
+							category={this.state.selectedCat}
+							param={this.props.params.productId}
 							removeFromOrder={this.removeFromOrder}  
 							openProduct={this.state.openProduct} language={this.state.appLanguage}
-							details={this.state.products[key]} key={key} /> )}
+							details={this.state.products[key]} key={key} 
+							transitionOnClose={this.transitionOnClose}
+							/> 
+							)}
 					</CSSTransitionGroup>
 				</div>
 				<Custom language={this.state.appLanguage} />

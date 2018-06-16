@@ -16,9 +16,9 @@ class ProductPage extends React.Component {
 
 	render(){
 		const product = this.props.details;
+		const imageGray = this.props.gray ? "_gray": "";
 		const white = product.color.white ? "white": "" ; 
 		const gray = product.color.gray ? "gray": "" ;
-		const imageGray = this.props.imageGray;
 		const language = this.props.language;
 		return (
 				<li className="expand container">

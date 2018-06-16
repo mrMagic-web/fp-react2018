@@ -1,5 +1,6 @@
 import React from 'react';
 import ReactDOM  from 'react-dom';
+import PropTypes from 'prop-types';
 import { moreInfo, addToList } from '../reducers/page_elements';
 import { imageUrl } from '../helpers';
 import ProductPage from './ProductPage';
@@ -18,6 +19,9 @@ class Product extends React.Component {
 		}
 		this.baseState = this.state;
 	}
+	componentDidMount() {
+		this.setState({ open: this.props.param === this.props.details.id })
+	}
 	viewGray() {
 		this.setState({ gray: true});
 	}
@@ -30,13 +34,14 @@ class Product extends React.Component {
 		ReactDOM.findDOMNode(this).scrollIntoView({behavior: "smooth", block: "start"});
 	}
 	closeProduct(){ 
-		this.setState({ open: false});	
+		this.setState({ open: false});
+		this.props.transitionOnClose();
 	}
 	render(){
 		const details = this.props.details;
+		const imageGray = this.props.gray ? "_gray": "";
 		const gray = details.color.gray ? "gray": "" ; 
 		const white = details.color.white ? "white": "" ;
-		const imageGray = this.state.gray ? "_gray": "";
 		const productAdded = this.props.added[details.id] ? 'disabled' : '';
 		const productRemoved = this.props.added[details.id] ? '' : 'disabled';
 		const language = this.props.language;
@@ -45,16 +50,17 @@ class Product extends React.Component {
 			return <ProductPage 
 					details={this.props.details}
 					closeProduct={this.closeProduct}
+					language={this.props.language}
 					addToOrder={this.props.addToOrder}
 					removeFromOrder={this.props.removeFromOrder}
-					viewWhite={this.viewWhite} viewGray={this.viewGray}
-					imageGray={imageGray}
-					language={this.props.language}
-					productAdded={productAdded} productRemoved={productRemoved}
+					viewWhite={this.viewWhite} 
+					viewGray={this.viewGray}
+					gray={this.state.gray}
+					productAdded={productAdded} 
+					productRemoved={productRemoved}
 				/>
-			
 		}
-
+		
 		return (
 			<li className="product" >
 				<div className="product-hover">
@@ -70,6 +76,10 @@ class Product extends React.Component {
 		)
 	}
 
+}
+
+ProductPage.contextTypes = {
+	router: PropTypes.object
 }
 
 export default Product;
