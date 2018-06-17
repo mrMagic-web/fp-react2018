@@ -13,7 +13,7 @@ class Custom extends React.Component {
                         <button className="whiteBtn">{contactUs[language]}</button>
                     </section>
                     <section className="custom__section">
-                        <img className="custom__section--image" alt="Fastpcak custom packagues" src="./img/custom-packages-1.png" />
+                        <img className="custom__section--image" alt="Fastpcak custom packagues" src="/img/custom-packages-1.png" />
                     </section>
                 </div>
             </div>

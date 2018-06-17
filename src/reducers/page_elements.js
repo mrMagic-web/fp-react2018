@@ -141,24 +141,24 @@ module.exports = {
     },
     mainMenu: {
         home: {
-            pl: 'Strona główna',
-            en: 'Home',
-            dk: 'Home'
+            pl: { text: 'Strona główna', link: "http://www.fastpack.dk/pl/"},
+            en: { text: 'Home', link: "http://www.fastpack.dk/en/"},
+            dk: { text: 'Home', link: "http://www.fastpack.dk/"},
         },
         about: {
-            pl: 'O nas',
-            en: 'About us',
-            dk: 'Om os'
+            pl: { text: 'O nas', link: "http://www.fastpack.dk/o-nas/"},
+            en: { text: 'About us', link: "http://www.fastpack.dk/about-us/"},
+            dk: { text: 'Om os', link: "http://www.fastpack.dk/om-os/"},
         },
         services: {
-            pl: 'Usługi',
-            en: 'Services',
-            dk: 'Veres services'
+            pl: { text: 'Usługi', link: "http://www.fastpack.dk/uslugi/"},
+            en: { text: 'Services', link: "http://www.fastpack.dk/service-en/"},
+            dk: { text: 'Veres services', link: "http://www.fastpack.dk/service/"},
         },
         contact: {
-            pl: 'Kontakt',
-            en: 'Contact',
-            dk: 'Kontakt os'
+            pl: { text: 'Kontakt', link: "http://www.fastpack.dk/kontakt-pl/"},
+            en: { text: 'Contact', link: "http://www.fastpack.dk/contact/"},
+            dk: { text: 'Kontakt os', link: "http://www.fastpack.dk/kontakt/"},
         }
     }
 
