@@ -2,7 +2,7 @@
   "name": "cotd",
   "version": "0.0.1",
   "private": true,
-  "homepage": "http://sklep.magiceportfolio.xon.pl/",
+  "homepage": "http://www.product-page.fastpack.dk",
   "devDependencies": {
     "autoprefixer-stylus": "0.10.0",
     "babel-eslint": "^7.1.1",

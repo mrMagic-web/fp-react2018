@@ -25,7 +25,7 @@ class TopNavbar extends Component {
     const remainingLangs = languages.filter( l => l !== language.toUpperCase() ) 
     return (
       <div className="topnav-area container">
-        <div className="logo-area"><img src="../img/logo-fastpack.png" alt="Logo fastpack" /></div>
+        <div className="logo-area"><a href="http://www.fastpack.dk/"><img src="http://www.fastpack.dk/wp-content/uploads/logo-fastpack.png" alt="Logo fastpack" /></a></div>
         <div className={this.state.mainDropdown ? "topnav responsive" : "topnav"} id="myTopnav">
           <a href={mainMenu.home[language].link}>{ mainMenu.home[language].text }</a>
           <a href={mainMenu.about[language].link}>{ mainMenu.about[language].text }</a>

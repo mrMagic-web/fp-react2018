@@ -65,14 +65,14 @@ class Form extends React.Component {
 		setTimeout( () => {
 			if(!this.state.error){
 				this.props.closeModal();
-				// const order = Object.keys(this.props.order).map( e => this.props.products[e].name[this.props.language]);
+				const order = Object.keys(this.props.order).map( e => this.props.products[e].name[this.props.language]);
 
-				// window.$crisp.push(["do", "chat:open"]);
-				// setTimeout( window.$crisp.push(["do", "message:send", ['text', `Hello ${this.state.name}. You have chosen following products`]]), 100);
-				// setTimeout( window.$crisp.push(["do", "message:send", ['text', `"${JSON.stringify(order)}"`]]), 1500);
-				// setTimeout( window.$crisp.push(["do", "message:send", ['text', `We will contact you as soon as possible to discuss your requirements.`]]), 3000);
-				// window.$crisp.push(["set", "user:email", [this.state.email]]);
-				// window.$crisp.push(["set", "user:nickname", [JSON.stringify(this.state.name)]]);		
+				window.$crisp.push(["do", "chat:open"]);
+				setTimeout( window.$crisp.push(["do", "message:send", ['text', `Hello ${this.state.name}. You have chosen following products`]]), 100);
+				setTimeout( window.$crisp.push(["do", "message:send", ['text', `"${JSON.stringify(order)}"`]]), 1500);
+				setTimeout( window.$crisp.push(["do", "message:send", ['text', `We will contact you as soon as possible to discuss your requirements.`]]), 3000);
+				window.$crisp.push(["set", "user:email", [this.state.email]]);
+				window.$crisp.push(["set", "user:nickname", [JSON.stringify(this.state.name)]]);		
 			}
 		}, 100);	
 	}
