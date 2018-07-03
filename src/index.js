@@ -5,6 +5,12 @@ import { BrowserRouter, Match, Miss } from 'react-router';
 import './css/style.css'
 import App from './components/App';
 
+import TagManager from 'react-gtm-module'
+
+const tagManagerArgs = {
+	gtmId: 'GTM-WDX629V'
+}
+
 const Root = () => {
 	// Router with BrowserRouter, Match and Miss
 
@@ -20,6 +26,5 @@ const Root = () => {
 		</BrowserRouter>
 	)
 }
-
+TagManager.initialize(tagManagerArgs)
 render(<Root />, document.getElementById('main'))
-

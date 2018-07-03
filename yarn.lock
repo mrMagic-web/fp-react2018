@@ -6272,6 +6272,10 @@ react-event-listener@^0.5.1:
     prop-types "^15.6.0"
     warning "^3.0.0"
 
+react-gtm-module@^2.0.2:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/react-gtm-module/-/react-gtm-module-2.0.2.tgz#21e67c075f1910e9ec4ec5b9931f9044259e611a"
+
 react-history@^0.14.0:
   version "0.14.1"
   resolved "https://registry.yarnpkg.com/react-history/-/react-history-0.14.1.tgz#0b97763c1bc96aee6bb59ed9702b86f731869369"
