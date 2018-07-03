@@ -8,4 +8,4 @@ npm-debug.log
 # IntelliJ
 *.iml
 /.idea
-src/base.js
+/src/base.js

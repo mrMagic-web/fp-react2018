@@ -424,7 +424,7 @@ module.exports = {
 			"dk": "Pommes frites bægre"
 		},
 		"description": {
-			"pl": "Kubełek na frytki to opakowanie na wynos ze sztywnego papieru. Stworzony jako alternatywa dla standardowej tacki na frytki. Szczególnie polecany do serwowania dań w plenerze. Np. przez foodtrucki. Używany także w miejscach serwujących Fish and Chips. Może zastąpić zamykane pudełko typu ”Fish and Chips” Ciekawostka- stworzyliśmy go pomniejszając papierowe pudełko na popcorn znane z kina",
+			"pl": "Kubełek na frytki to opakowanie na wynos ze sztywnego papieru. Stworzony jako alternatywa dla standardowej tacki na frytki. Szczególnie polecany do serwowania dań w plenerze. Np. przez foodtrucki. Używany także w miejscach serwujących Fish and Chips. Może zastąpić zamykane pudełko typu Fish and Chips Ciekawostka- stworzyliśmy go pomniejszając papierowe pudełko na popcorn znane z kina",
 			"en": "A French fry bucket is a takeaway packaging made of poster board. It has been created as an alternative for a standard French fry tray. It is recommended especially for outdoor food serving, e.g. food trucks or places with Fish and chips. This bucket may be used as an alternative for a Fish and chips box with a lid. Tidbit – this product has been created by minimalization of a paper popcorn box known from the cinema.",
 			"dk": "Alterntiv til et klassiske pommes frit bakke. Egner sig særligt til Foodtrucks og udendørs events. Andet produkt navn: pommes frites bakke, pommes frites bæger, fish&chips bæger. Produktet er en videreudvikling og formindsket udgave af et popcorn bæger. Laves også i stor størrelse."
 		},
