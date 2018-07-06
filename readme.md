@@ -11,5 +11,5 @@ environment.
 
 ## Preview
 
-[![Site Preview](http://magiceportfolio.xon.pl/fastpack/FPproduct.jpg)](http://www.fastpack.dk/produkter)
+[![Site Preview](http://magiceportfolio.xon.pl/fastpack/FPproduct.jpg)](http://product-page.fastpack.dk)
 
