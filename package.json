@@ -31,6 +31,7 @@
     "react-country-flag": "^0.2.0",
     "react-custom-scrollbars": "^4.2.1",
     "react-dom": "^15.6.2",
+    "react-ga": "^2.5.3",
     "react-gtm-module": "^2.0.2",
     "react-redux": "^5.0.7",
     "react-responsive-modal": "^2.0.1",

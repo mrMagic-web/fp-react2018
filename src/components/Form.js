@@ -3,6 +3,7 @@ import ICONS from '../graphics/icons';
 import Icon from '../graphics/icon';
 import ReactTooltip from 'react-tooltip'
 import { imageUrl} from '../helpers';
+import ReactGA from 'react-ga';
 
 class Form extends React.Component {
 	
@@ -72,7 +73,8 @@ class Form extends React.Component {
 				setTimeout( window.$crisp.push(["do", "message:send", ['text', `"${JSON.stringify(order)}"`]]), 1500);
 				setTimeout( window.$crisp.push(["do", "message:send", ['text', `We will contact you as soon as possible to discuss your requirements.`]]), 3000);
 				window.$crisp.push(["set", "user:email", [this.state.email]]);
-				window.$crisp.push(["set", "user:nickname", [JSON.stringify(this.state.name)]]);		
+				window.$crisp.push(["set", "user:nickname", [JSON.stringify(this.state.name)]]);
+				ReactGA.ga('send', 'event', 'click', 'Form Sent', 'Product Form');		
 			}
 		}, 100);	
 	}

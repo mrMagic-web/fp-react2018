@@ -11,6 +11,7 @@ import Custom from './Custom';
 import TopNavbar from './TopNavbar';
 import Form from './Form';
 // import base from '../base';
+import ReactGA from 'react-ga';
 import { language } from '../helpers';
 import Modal from 'react-responsive-modal';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
@@ -94,6 +95,7 @@ class App extends React.Component {
 		this.setState({ order,  added}); // update state, ES short for {order: this.order}
 	}
 	contact() {
+		ReactGA.ga('send', 'event', 'click', 'Open Form', 'Product Form');
 		this.setState({modalOpen: true});
 	}
 	transitionOnClose(){

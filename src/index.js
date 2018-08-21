@@ -4,12 +4,13 @@ import { BrowserRouter, Match, Miss } from 'react-router';
 
 import './css/style.css'
 import App from './components/App';
-
 import TagManager from 'react-gtm-module'
+import ReactGA from 'react-ga';
 
 const tagManagerArgs = {
 	gtmId: 'GTM-WDX629V'
 }
+ReactGA.initialize('UA-24581513-13');
 
 const Root = () => {
 	// Router with BrowserRouter, Match and Miss
