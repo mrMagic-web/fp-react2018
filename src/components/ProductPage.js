@@ -29,7 +29,6 @@ class ProductPage extends React.Component {
     const { language, details } = this.props;
     const white = details.color.white ? "white" : "";
     const gray = details.color.gray ? "gray" : "";
-    const imageVersion = this.props.versions ? "_sm" : "";
     const imageGray = this.state.gray ? "_gray" : "";
     return (
       <li
@@ -41,7 +40,7 @@ class ProductPage extends React.Component {
         <div className="image">
           <img
             alt={details.name[language]}
-            src={`${imageUrl}${details.id}${imageVersion}${imageGray}.jpg`}
+            src={`${imageUrl}${details.id}_sm${imageGray}.jpg`}
           />
         </div>
         <div className="description">

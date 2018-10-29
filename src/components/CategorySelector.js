@@ -6,8 +6,7 @@ class CategorySelector extends React.Component {
 	}
 
 	render(){
-		const language = this.props.language;
-		const categories = this.props.categories;
+		const {language,categories} = this.props;
 		return ( 
 			<div className="selector container">
 				<ul> 

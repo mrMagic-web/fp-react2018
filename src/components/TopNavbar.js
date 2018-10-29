@@ -21,7 +21,7 @@ class TopNavbar extends Component {
     this.props.changeLanguage(lang);
   }
   render() {
-    const language = this.props.language;
+    const {language} = this.props;
     const remainingLangs = languages.filter( l => l !== language.toUpperCase() ) 
     return (
       <div className="topnav-area container">

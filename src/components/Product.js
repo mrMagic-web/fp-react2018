@@ -34,13 +34,11 @@ class Product extends React.Component {
     }
   }
   render() {
-    const details = this.props.details;
+    const {details, language} = this.props;
     const gray = details.color.gray ? "gray" : "";
     const white = details.color.white ? "white" : "";
     const productAdded = this.props.added[details.id] ? "disabled" : "";
     const productRemoved = this.props.added[details.id] ? "" : "disabled";
-    const language = this.props.language;
-    const versions = details.versions.length > 1;
 
     if (this.state.open) {
       return (
@@ -54,14 +52,12 @@ class Product extends React.Component {
           param={this.props.param}
           productAdded={productAdded}
           productRemoved={productRemoved}
-          versions={versions}
         />
       );
     }
 
     return (
       <li className="product">
-        {console.log(this.props, this.state)}
         <div className="product-hover">
           <button onClick={this.openProduct}>{moreInfo[language]}</button>
           <button
@@ -74,7 +70,7 @@ class Product extends React.Component {
         <div className="clickable">
           <img
             alt={details.id}
-            src={`${imageUrl}/thumbs/${details.id}${versions ? "_sm" : ""}.jpg`}
+            src={`${imageUrl}${details.id}_sm.jpg`}
           />
           <h4 className="product-name">{details.name[language]}</h4>
           <div className="colors">
