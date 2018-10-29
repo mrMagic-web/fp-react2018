@@ -16,9 +16,10 @@
     padding-right space * 3
   .description
     margin-bottom 10px 
+    padding 15px
     p
       margin-top 0
-      padding-right 55px 
+      padding-right 60px 
       font-size 1.25rem    
     h4
       font-size 1.75rem    
@@ -116,12 +117,14 @@
         max-width 360px
         margin auto
     .colors
-      top 15px !important
+      top 55px !important
       right 15px !important
       height 68px
       span 
         width 32px
         height 32px       
+    .size-selection
+      padding-inline-start 0
     .description
       width 60%
       display flex
@@ -136,22 +139,26 @@
         button
           margin 0 10px 5px 0
       .dimensions 
-        max-width 300px
         display flex
-        justify-content space-between
+        justify-content flex-start
         font-size 1.2rem
         align-content flex-end
-        margin-bottom: 25px;
+        margin-bottom 25px
+        align-items center
+        padding-inline-start 0
+        padding-right 60px
         @media mobile
           max-width 100%
           padding-left: 0
         li 
-          flex 1 1 auto
+          flex 0 1 auto
           display flex
           margin 0 4px
           flex-direction column
           text-align center
           border-right 1px solid gray-lighter
+          display: flex;
+          justify-content: space-between;
           &:last-of-type
             border-right none            
           b
@@ -159,7 +166,9 @@
             margin-bottom 0
             display block
             font-size 1rem
-            height 20px
+            margin-bottom 4px
+        small 
+            padding-right 8px
       h4
         position relative
         .colors
