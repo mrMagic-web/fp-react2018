@@ -744,7 +744,7 @@ module.exports = {
     },
     description: {
       pl:
-        "orba zakupowa to torba papierowa o dużym rozmiarze z uchwytem. Znajduje zastosowanie w wielu branżach. Np. butiki z ubraniami i drogerie, a także gastronomia Papierowe torby zakupowe na życzenie Klientów produkujemy w wielu różnych rozmiarach. Istnieje możliwość produkcji torby papierowej pokrytej warstwą lakieru, który nadaje torbie ekskluzywności.",
+        "Torba zakupowa to torba papierowa o dużym rozmiarze z uchwytem. Znajduje zastosowanie w wielu branżach. Np. butiki z ubraniami i drogerie, a także gastronomia Papierowe torby zakupowe na życzenie Klientów produkujemy w wielu różnych rozmiarach. Istnieje możliwość produkcji torby papierowej pokrytej warstwą lakieru, który nadaje torbie ekskluzywności.",
       en: "",
       dk: ""
     },

@@ -11,16 +11,26 @@ class ProductPage extends React.Component {
   constructor() {
     super();
     this.state = {
-      products: ProductsList
+      products: ProductsList,
+      gray: false,
+      selected: "sm"
     };
-  }
 
+    this.viewGray = this.viewGray.bind(this);
+    this.viewWhite = this.viewWhite.bind(this);
+  }
+  viewGray() {
+    this.setState({ gray: true });
+  }
+  viewWhite() {
+    this.setState({ gray: false });
+  }
   render() {
-    const product = this.props.details;
-    const imageGray = this.props.gray ? "_gray" : "";
-    const white = product.color.white ? "white" : "";
-    const gray = product.color.gray ? "gray" : "";
-    const language = this.props.language;
+    const { language, details } = this.props;
+    const white = details.color.white ? "white" : "";
+    const gray = details.color.gray ? "gray" : "";
+    const imageVersion = this.props.versions ? "_sm" : "";
+    const imageGray = this.state.gray ? "_gray" : "";
     return (
       <li
         className={`expand container ${this.props.param ? "top-product" : ""}`}
@@ -30,36 +40,40 @@ class ProductPage extends React.Component {
         </div>
         <div className="image">
           <img
-            alt={product.name[language]}
-            src={`${imageUrl}${product.id}${imageGray}.jpg`}
+            alt={details.name[language]}
+            src={`${imageUrl}${details.id}${imageVersion}${imageGray}.jpg`}
           />
         </div>
         <div className="description">
           <h4>
-            {product.name[language]}{" "}
+            {details.name[language]}{" "}
             <div className="colors">
-              <span onClick={this.props.viewWhite} className={white} />{" "}
-              <span onClick={this.props.viewGray} className={gray} />
+              <span onClick={this.viewWhite} className={white} />{" "}
+              <span onClick={this.viewGray} className={gray} />
             </div>
           </h4>
-          <p>{product.description[language]}</p>
+          <p>{details.description[language]}</p>
           <ul className="size-selection">
-            {product.versions
+            {details.versions
               .filter(version => version.size === "sm")
               .map(version => (
-                <ProductDimensions version={version} language={language} />
+                <ProductDimensions
+                  key={version}
+                  version={version}
+                  language={language}
+                />
               ))}
           </ul>
           <div className="cart-buttons">
             <button
               className={this.props.productAdded}
-              onClick={() => this.props.addToOrder(product.id)}
+              onClick={() => this.props.addToOrder(details.id)}
             >
               {pageElements.addToList[language]}
             </button>
             <button
               className={this.props.productRemoved}
-              onClick={() => this.props.removeFromOrder(product.id)}
+              onClick={() => this.props.removeFromOrder(details.id)}
             >
               {pageElements.removeFromList[language]}
             </button>
