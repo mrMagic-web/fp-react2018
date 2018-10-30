@@ -145,6 +145,16 @@ module.exports = {
     en: "Remove from list",
     dk: "Fjern fra listen"
   },
+  productSizes: {
+    pl: "Rozmiar",
+    en: "Size",
+    dk: "Størrelse"
+  },
+  productColors: {
+    pl: "Kolor",
+    en: "Colour",
+    dk: "Farve"
+  },
   mainMenu: {
     home: {
       pl: { text: "Strona główna", link: "http://www.fastpack.dk/pl/" },

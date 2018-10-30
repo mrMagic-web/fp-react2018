@@ -3,6 +3,7 @@ import pageElements from "../reducers/page_elements";
 
 const ProductDimensions = ({ versions, language, changeSelectedSize }) => (
   <div className="size-selection">
+    <h4>{pageElements.productSizes[language]}</h4>
     {versions.map(version => (
       <div key={version.size}>
         <div className="sizings">

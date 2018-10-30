@@ -10,7 +10,6 @@ import SampleProjects from "./SampleProjects";
 import Custom from "./Custom";
 import TopNavbar from "./TopNavbar";
 import Form from "./Form";
-// import base from '../base';
 import ReactGA from "react-ga";
 import { language } from "../helpers";
 import Modal from "react-responsive-modal";
@@ -81,6 +80,8 @@ class App extends React.Component {
   changeLanguage(lang) {
     this.setState({ appLanguage: lang });
     this.context.router.transitionTo(`/${lang}`);
+    localStorage.setItem("appLanguage", lang);
+    window.$crisp.push(["do", "session:reset", ["reload"]]);
   }
   addToOrder(key) {
     const order = { ...this.state.order },

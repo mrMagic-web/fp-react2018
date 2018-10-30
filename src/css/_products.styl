@@ -6,11 +6,8 @@
   ul
     list-style-type none 
   .colors
-    position absolute
-    bottom 15px
-    right 15px
     display flex
-    flex-direction column  
+    flex-direction row  
   .product-name
     margin 10px 0
     padding-right space * 3
@@ -19,7 +16,6 @@
     padding 15px
     p
       margin-top 0
-      padding-right 60px 
       font-size 1.25rem    
     h4
       font-size 1.75rem    
@@ -42,8 +38,6 @@
         display flex
         flex-direction row
         align-items center
-        .colors 
-          bottom auto
         img
           width 90px
           margin 0
@@ -116,16 +110,15 @@
         width 100%
         max-width 360px
         margin auto
+    .product-specs
+      display flex
     .colors
-      top 55px !important
-      right 15px !important
-      height 68px
       span 
         width 32px
         height 32px       
     .size-selection
       padding-inline-start 0
-      margin-bottom 15px
+      margin 0 0 20px
     .description
       width 60%
       display flex
@@ -140,50 +133,52 @@
         button
           margin 0 10px 5px 0   
       .sizings
-        margin-left 20px
+        margin-left 30px
         span
-          color gray
-          margin 0 4px
+          color brand-primary
+          margin 0
           text-align center
-          padding 2px 6px
-          min-width 55px  
+          padding 2px
+          width 75px  
+          font-size 11px
+      .dimensions
+        &:hover
+          cursor pointer
+          background-color brand-primary
+          color white
+      
       .dimensions, .sizings 
         display flex
         justify-content flex-start
         font-size 1.2rem
-        align-content flex-end
         margin-bottom 5px
         align-items flex-end
         padding-inline-start 0
-        padding-right 60px
+        padding-right 15px
         @media mobile
           max-width 100%
           padding-left: 0
         li 
           flex 0 1 auto
           display flex
-          margin 0 4px
+          margin 0
           flex-direction column
           text-align center
           justify-content: space-between;
-          padding 2px 6px
-          min-width 55px          
+          padding 2px
+          width 75px          
           b
             text-align center
             display block
             font-size 1rem
             margin-bottom 4px
         small
-          width 20px
+          width 30px
           font-weight bold
-          text-align left
-          padding-bottom 5px
+          text-align center
+          padding 5px
       h4
         position relative
-        .colors
-          position absolute
-          right 0
-          top 0
     img
       height auto 
       width 100%
@@ -207,5 +202,4 @@
     box-shadow         0px 0px 2px 0px rgba(50, 50, 50, 0.5)
 
 .gray 
-  margin-top 3px
   background-image url('http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg')

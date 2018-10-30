@@ -6,6 +6,7 @@ import { imageUrl } from "../helpers";
 import ICONS from "../graphics/icons";
 import Icon from "../graphics/icon";
 import ProductDimensions from "./ProductDimensions";
+import ColorPicker from "./ColorPicker";
 
 class ProductPage extends React.Component {
   constructor() {
@@ -50,21 +51,22 @@ class ProductPage extends React.Component {
           />
         </div>
         <div className="description">
-          <h4>
-            {details.name[language]}{" "}
-            <div className="colors">
-              <span onClick={this.viewWhite} className={white} />{" "}
-              <span onClick={this.viewGray} className={gray} />
-            </div>
-          </h4>
+          <h4>{details.name[language]} </h4>
           <p>{details.description[language]}</p>
-
-          <ProductDimensions
-            versions={details.versions}
-            language={language}
-            changeSelectedSize={this.changeSelectedSize}
-          />
-
+          <div className="product-specs">
+            <ProductDimensions
+              versions={details.versions}
+              language={language}
+              changeSelectedSize={this.changeSelectedSize}
+            />
+            <ColorPicker
+              language={language}
+              viewWhite={this.viewWhite}
+              viewGray={this.viewGray}
+              white={white}
+              gray={gray}
+            />
+          </div>
           <div className="cart-buttons">
             <button
               className={this.props.productAdded}
