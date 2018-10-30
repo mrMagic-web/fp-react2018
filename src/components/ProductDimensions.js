@@ -1,7 +1,12 @@
 import React from "react";
 import pageElements from "../reducers/page_elements";
 
-const ProductDimensions = ({ versions, language, changeSelectedSize }) => (
+const ProductDimensions = ({
+  versions,
+  language,
+  changeSelectedSize,
+  selected
+}) => (
   <div className="size-selection">
     <h4>{pageElements.productSizes[language]}</h4>
     {versions.map(version => (
@@ -17,7 +22,9 @@ const ProductDimensions = ({ versions, language, changeSelectedSize }) => (
           )}
         </div>
         <ul
-          className="dimensions"
+          className={`dimensions ${
+            version.size === selected && versions.length !== 1 ? "active" : ""
+          }`}
           onClick={() => changeSelectedSize(version.size)}
         >
           <small>{version.size}</small>

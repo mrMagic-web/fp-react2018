@@ -747,8 +747,12 @@ ul.order li button {
 }
 .products .expand .description .dimensions:hover {
   cursor: pointer;
+}
+.products .expand .description .dimensions:hover,
+.products .expand .description .dimensions.active {
   background-color: #00adef;
   color: #fff;
+  text-decoration: none;
 }
 .products .expand .description .dimensions,
 .products .expand .description .sizings {

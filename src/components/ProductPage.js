@@ -58,6 +58,7 @@ class ProductPage extends React.Component {
               versions={details.versions}
               language={language}
               changeSelectedSize={this.changeSelectedSize}
+              selected={this.state.selected}
             />
             <ColorPicker
               language={language}
