@@ -742,7 +742,18 @@ ul.order li button {
 .products .expand .description .cart-buttons button {
   margin: 0 10px 5px 0;
 }
-.products .expand .description .dimensions {
+.products .expand .description .sizings {
+  margin-left: 20px;
+}
+.products .expand .description .sizings span {
+  color: #808080;
+  margin: 0 4px;
+  text-align: center;
+  padding: 2px 6px;
+  min-width: 55px;
+}
+.products .expand .description .dimensions,
+.products .expand .description .sizings {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-pack: start;
@@ -758,12 +769,14 @@ ul.order li button {
   padding-right: 60px;
 }
 @media only screen and (max-width: 768px) {
-  .products .expand .description .dimensions {
+  .products .expand .description .dimensions,
+  .products .expand .description .sizings {
     max-width: 100%;
     padding-left: 0;
   }
 }
-.products .expand .description .dimensions li {
+.products .expand .description .dimensions li,
+.products .expand .description .sizings li {
   -ms-flex: 0 1 auto;
       flex: 0 1 auto;
   display: -ms-flexbox;
@@ -772,22 +785,20 @@ ul.order li button {
   -ms-flex-direction: column;
       flex-direction: column;
   text-align: center;
-  display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
   padding: 2px 6px;
   min-width: 55px;
 }
-.products .expand .description .dimensions li:last-of-type {
-  border-right: none;
-}
-.products .expand .description .dimensions li b {
+.products .expand .description .dimensions li b,
+.products .expand .description .sizings li b {
   text-align: center;
   display: block;
   font-size: 1rem;
   margin-bottom: 4px;
 }
-.products .expand .description .dimensions small {
+.products .expand .description .dimensions small,
+.products .expand .description .sizings small {
   width: 20px;
   font-weight: bold;
   text-align: left;

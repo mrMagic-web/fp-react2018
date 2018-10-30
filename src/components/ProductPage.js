@@ -18,12 +18,16 @@ class ProductPage extends React.Component {
 
     this.viewGray = this.viewGray.bind(this);
     this.viewWhite = this.viewWhite.bind(this);
+    this.changeSelectedSize = this.changeSelectedSize.bind(this);
   }
   viewGray() {
     this.setState({ gray: true });
   }
   viewWhite() {
     this.setState({ gray: false });
+  }
+  changeSelectedSize(size) {
+    this.setState({ selected: size });
   }
   render() {
     const { language, details } = this.props;
@@ -40,7 +44,9 @@ class ProductPage extends React.Component {
         <div className="image">
           <img
             alt={details.name[language]}
-            src={`${imageUrl}${details.id}_sm${imageGray}.jpg`}
+            src={`${imageUrl}${details.id}_${
+              this.state.selected
+            }${imageGray}.jpg`}
           />
         </div>
         <div className="description">
@@ -53,7 +59,11 @@ class ProductPage extends React.Component {
           </h4>
           <p>{details.description[language]}</p>
 
-          <ProductDimensions versions={details.versions} language={language} />
+          <ProductDimensions
+            versions={details.versions}
+            language={language}
+            changeSelectedSize={this.changeSelectedSize}
+          />
 
           <div className="cart-buttons">
             <button
