@@ -6463,6 +6463,10 @@ react@^15.6.2:
     prop-types "^15.6.2"
     scheduler "^0.10.0"
 
+reactjs-dropdown-component@^1.0.5:
+  version "1.0.5"
+  resolved "https://registry.yarnpkg.com/reactjs-dropdown-component/-/reactjs-dropdown-component-1.0.5.tgz#b65fa0de2e40c8fcd911d313d8f5d784cba32651"
+
 read-pkg-up@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/read-pkg-up/-/read-pkg-up-1.0.1.tgz#9d63c13276c065918d57f002a57f40a1b643fb02"

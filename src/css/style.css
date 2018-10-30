@@ -713,6 +713,7 @@ ul.order li button {
 .products .expand .size-selection {
   -webkit-padding-start: 0;
           padding-inline-start: 0;
+  margin-bottom: 15px;
 }
 .products .expand .description {
   width: 60%;
@@ -749,9 +750,9 @@ ul.order li button {
   font-size: 1.2rem;
   -ms-flex-line-pack: end;
       align-content: flex-end;
-  margin-bottom: 25px;
-  -ms-flex-align: center;
-      align-items: center;
+  margin-bottom: 5px;
+  -ms-flex-align: end;
+      align-items: flex-end;
   -webkit-padding-start: 0;
           padding-inline-start: 0;
   padding-right: 60px;
@@ -771,23 +772,26 @@ ul.order li button {
   -ms-flex-direction: column;
       flex-direction: column;
   text-align: center;
-  border-right: 1px solid #f1f1f1;
   display: flex;
   -ms-flex-pack: justify;
       justify-content: space-between;
+  padding: 2px 6px;
+  min-width: 55px;
 }
 .products .expand .description .dimensions li:last-of-type {
   border-right: none;
 }
 .products .expand .description .dimensions li b {
   text-align: center;
-  margin-bottom: 0;
   display: block;
   font-size: 1rem;
   margin-bottom: 4px;
 }
 .products .expand .description .dimensions small {
-  padding-right: 8px;
+  width: 20px;
+  font-weight: bold;
+  text-align: left;
+  padding-bottom: 5px;
 }
 .products .expand .description h4 {
   position: relative;

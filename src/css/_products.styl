@@ -125,6 +125,7 @@
         height 32px       
     .size-selection
       padding-inline-start 0
+      margin-bottom 15px
     .description
       width 60%
       display flex
@@ -143,8 +144,8 @@
         justify-content flex-start
         font-size 1.2rem
         align-content flex-end
-        margin-bottom 25px
-        align-items center
+        margin-bottom 5px
+        align-items flex-end
         padding-inline-start 0
         padding-right 60px
         @media mobile
@@ -156,19 +157,22 @@
           margin 0 4px
           flex-direction column
           text-align center
-          border-right 1px solid gray-lighter
           display: flex;
           justify-content: space-between;
+          padding 2px 6px
+          min-width 55px
           &:last-of-type
             border-right none            
           b
             text-align center
-            margin-bottom 0
             display block
             font-size 1rem
             margin-bottom 4px
-        small 
-            padding-right 8px
+        small
+          width 20px
+          font-weight bold
+          text-align left
+          padding-bottom 5px
       h4
         position relative
         .colors

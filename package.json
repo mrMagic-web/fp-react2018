@@ -38,6 +38,7 @@
     "react-router": "4.0.0-alpha.4",
     "react-slick": "^0.23.1",
     "react-tooltip": "^3.4.0",
+    "reactjs-dropdown-component": "^1.0.5",
     "redux-form": "^7.3.0",
     "slick-carousel": "^1.8.1",
     "source-map": "^0.7.2"

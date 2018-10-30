@@ -52,15 +52,9 @@ class ProductPage extends React.Component {
             </div>
           </h4>
           <p>{details.description[language]}</p>
-          <div className="size-selection">
-            {details.versions.map(version => (
-              <ProductDimensions
-                key={version.size}
-                version={version}
-                language={language}
-              />
-            ))}
-          </div>
+
+          <ProductDimensions versions={details.versions} language={language} />
+
           <div className="cart-buttons">
             <button
               className={this.props.productAdded}

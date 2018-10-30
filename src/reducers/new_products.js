@@ -243,9 +243,7 @@ module.exports = {
         dimensions: {
           width: 150,
           length: 150,
-          height: 80,
-          bottomWidth: 110,
-          bottomLength: 120
+          height: 80
         }
       }
     ]
