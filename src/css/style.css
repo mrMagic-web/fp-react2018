@@ -536,13 +536,10 @@ ul.order li button {
   list-style-type: none;
 }
 .products .colors {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-direction: column;
-      flex-direction: column;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 .products .product-name {
   margin: 10px 0;
@@ -550,10 +547,10 @@ ul.order li button {
 }
 .products .description {
   margin-bottom: 10px;
+  padding: 15px;
 }
 .products .description p {
   margin-top: 0;
-  padding-right: 55px;
   font-size: 1.25rem;
 }
 .products .description h4 {
@@ -589,9 +586,6 @@ ul.order li button {
         flex-direction: row;
     -ms-flex-align: center;
         align-items: center;
-  }
-  .products .product .clickable .colors {
-    bottom: auto;
   }
   .products .product .clickable img {
     width: 90px;
@@ -700,14 +694,18 @@ ul.order li button {
     margin: auto;
   }
 }
-.products .expand .colors {
-  top: 15px !important;
-  right: 15px !important;
-  height: 68px;
+.products .expand .product-specs {
+  display: -ms-flexbox;
+  display: flex;
 }
 .products .expand .colors span {
   width: 32px;
   height: 32px;
+}
+.products .expand .size-selection {
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  margin: 0 0 20px;
 }
 .products .expand .description {
   width: 60%;
@@ -736,51 +734,78 @@ ul.order li button {
 .products .expand .description .cart-buttons button {
   margin: 0 10px 5px 0;
 }
-.products .expand .description .dimensions {
-  max-width: 300px;
+.products .expand .description .sizings {
+  margin-left: 30px;
+}
+.products .expand .description .sizings span {
+  color: #00adef;
+  margin: 0;
+  text-align: center;
+  padding: 2px;
+  width: 75px;
+  font-size: 11px;
+}
+.products .expand .description .dimensions:hover {
+  cursor: pointer;
+}
+.products .expand .description .dimensions:hover,
+.products .expand .description .dimensions.active {
+  background-color: #00adef;
+  color: #fff;
+  text-decoration: none;
+}
+.products .expand .description .dimensions,
+.products .expand .description .sizings {
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: justify;
-      justify-content: space-between;
+  -ms-flex-pack: start;
+      justify-content: flex-start;
   font-size: 1.2rem;
-  -ms-flex-line-pack: end;
-      align-content: flex-end;
-  margin-bottom: 25px;
+  margin-bottom: 5px;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -webkit-padding-start: 0;
+          padding-inline-start: 0;
+  padding-right: 15px;
 }
 @media only screen and (max-width: 768px) {
-  .products .expand .description .dimensions {
+  .products .expand .description .dimensions,
+  .products .expand .description .sizings {
     max-width: 100%;
     padding-left: 0;
   }
 }
-.products .expand .description .dimensions li {
-  -ms-flex: 1 1 auto;
-      flex: 1 1 auto;
+.products .expand .description .dimensions li,
+.products .expand .description .sizings li {
+  -ms-flex: 0 1 auto;
+      flex: 0 1 auto;
   display: -ms-flexbox;
   display: flex;
-  margin: 0 4px;
+  margin: 0;
   -ms-flex-direction: column;
       flex-direction: column;
   text-align: center;
-  border-right: 1px solid #f1f1f1;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  padding: 2px;
+  width: 75px;
 }
-.products .expand .description .dimensions li:last-of-type {
-  border-right: none;
-}
-.products .expand .description .dimensions li b {
+.products .expand .description .dimensions li b,
+.products .expand .description .sizings li b {
   text-align: center;
-  margin-bottom: 0;
   display: block;
   font-size: 1rem;
-  height: 20px;
+  margin-bottom: 4px;
+}
+.products .expand .description .dimensions small,
+.products .expand .description .sizings small {
+  width: 30px;
+  font-weight: bold;
+  text-align: center;
+  padding: 5px;
 }
 .products .expand .description h4 {
   position: relative;
-}
-.products .expand .description h4 .colors {
-  position: absolute;
-  right: 0;
-  top: 0;
 }
 .products .expand img {
   height: auto;
@@ -810,7 +835,6 @@ ul.order li button {
   box-shadow: 0px 0px 2px 0px rgba(50,50,50,0.5);
 }
 .gray {
-  margin-top: 3px;
   background-image: url("http://www.fastpack.dk/wp-content/uploads/bag-gray.jpg");
 }
 html {

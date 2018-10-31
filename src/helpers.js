@@ -1,4 +1,4 @@
-export const imageUrl = 'http://fastpack.dk/wp-content/uploads/products/';
+export const imageUrl = 'http://fastpack.dk/wp-content/uploads/images/';
 export const language =  getLanguage();
 export const languages = ['DK', 'EN', 'PL'];
 export const flags = {

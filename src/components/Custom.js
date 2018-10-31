@@ -3,7 +3,7 @@ import {customDesignsTitle, customDesignsCopy, contactUs} from '../reducers/page
 
 class Custom extends React.Component {
     render(){
-        const language = this.props.language;
+        const {language} = this.props;
         return (
             <div className="custom">
                 <div className="container">   
