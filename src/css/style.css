@@ -707,6 +707,9 @@ ul.order li button {
           padding-inline-start: 0;
   margin: 0 0 20px;
 }
+.products .expand .size-selection .product-colors {
+  padding-left: 15px;
+}
 .products .expand .description {
   width: 60%;
   display: -ms-flexbox;
@@ -761,12 +764,12 @@ ul.order li button {
   -ms-flex-pack: start;
       justify-content: flex-start;
   font-size: 1.2rem;
-  margin-bottom: 5px;
+  margin-bottom: 1px;
+  padding: 2px 0;
   -ms-flex-align: end;
       align-items: flex-end;
   -webkit-padding-start: 0;
           padding-inline-start: 0;
-  padding-right: 15px;
 }
 @media only screen and (max-width: 768px) {
   .products .expand .description .dimensions,
