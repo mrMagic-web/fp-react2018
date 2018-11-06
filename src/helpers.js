@@ -1,4 +1,4 @@
-export const imageUrl = "img/images/";
+export const imageUrl = "/img/images/";
 export const language = getLanguage();
 export const languages = ["DK", "EN", "PL"];
 export const flags = {
