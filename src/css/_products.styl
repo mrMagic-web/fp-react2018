@@ -38,6 +38,10 @@
         display flex
         flex-direction row
         align-items center
+        @media mobile
+          justify-content space-between
+          .product-name
+            margin-right auto
         img
           width 90px
           margin 0
@@ -112,6 +116,9 @@
         margin auto
     .product-specs
       display flex
+      h4
+        margin-block-start 0
+        font-size 1.4rem
     .colors
       span 
         width 32px
@@ -119,8 +126,8 @@
     .size-selection
       padding-inline-start 0
       margin 0 0 20px
-      .product-colors
-        padding-left 15px
+    .product-colors
+      padding-left 1rem
     .description
       width 60%
       display flex
@@ -143,6 +150,10 @@
           padding 2px
           width 75px  
           font-size 11px
+          @media mobile
+            width 50px  
+            font-size 9px
+            letter-spacing -0.2px
       .dimensions
         &:hover
           cursor pointer
@@ -157,7 +168,7 @@
         font-size 1.2rem
         margin-bottom 1px
         padding 2px 0
-        align-items flex-end
+        align-items center
         padding-inline-start 0
         @media mobile
           max-width 100%
@@ -170,7 +181,10 @@
           text-align center
           justify-content: space-between;
           padding 2px
-          width 75px          
+          width 75px
+          @media mobile
+            width: 50px
+            font-size 9px          
           b
             text-align center
             display block

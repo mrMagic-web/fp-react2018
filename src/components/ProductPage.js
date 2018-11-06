@@ -52,7 +52,9 @@ class ProductPage extends React.Component {
         </div>
         <div className="description">
           <h4>{details.name[language]} </h4>
-          <p>{details.description[language]}</p>
+          {details.description[language] ? (
+            <p>{details.description[language]}</p>
+          ) : null}
           <div className="product-specs">
             <ProductDimensions
               versions={details.versions}
