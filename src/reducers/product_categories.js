@@ -75,7 +75,14 @@ module.exports = {
       "your-sushi3_white",
       "your-sushi-black"
     ],
-    productList: ["sushi_bag", "cutlery_case", "napkin", "coffee_cup"]
+    productList: [
+      "sushi_bag",
+      "cutlery_case",
+      "napkin",
+      "coffee_cup",
+      "sushi_box",
+      "sushi_box_w"
+    ]
   },
   candy_store: {
     id: "candy_store",

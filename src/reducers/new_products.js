@@ -788,5 +788,91 @@ module.exports = {
         }
       }
     ]
+  },
+  sushi_box: {
+    id: "sushi_box",
+    name: {
+      pl: "Pudełko do sushi",
+      en: "Sushi box",
+      dk: "Sushi box"
+    },
+    description: {
+      pl: "",
+      en: "",
+      dk: ""
+    },
+    color: {
+      white: true,
+      gray: false
+    },
+    versions: [
+      {
+        size: "sm",
+        dimensions: {
+          width: 190,
+          length: 130,
+          height: 50
+        }
+      },
+      {
+        size: "md",
+        dimensions: {
+          width: 260,
+          length: 190,
+          height: 50
+        }
+      },
+      {
+        size: "lg",
+        dimensions: {
+          width: 320,
+          length: 320,
+          height: 50
+        }
+      }
+    ]
+  },
+  sushi_box_w: {
+    id: "sushi_box_w",
+    name: {
+      pl: "Pudełko do sushi z oknem",
+      en: "Sushi box with window",
+      dk: "Sushi box og vindue"
+    },
+    description: {
+      pl: "",
+      en: "",
+      dk: ""
+    },
+    color: {
+      white: true,
+      gray: false
+    },
+    versions: [
+      {
+        size: "sm",
+        dimensions: {
+          width: 190,
+          length: 130,
+          height: 50
+        }
+      },
+      {
+        size: "md",
+        dimensions: {
+          width: 260,
+          length: 190,
+          height: 50
+        }
+      },
+      {
+        size: "lg",
+        dimensions: {
+          width: 320,
+          length: 320,
+          height: 50
+        }
+      }
+    ]
   }
 };
