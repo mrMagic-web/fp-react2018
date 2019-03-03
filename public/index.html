@@ -2,20 +2,58 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Fastpack products</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Fastpack products</title>
+    <!-- Facebook Pixel Code -->
+    <script>
+        ! function(f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function() {
+                n.callMethod ?
+                    n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n;
+            n.loaded = !0;
+            n.version = '2.0';
+            n.queue = [];
+            t = b.createElement(e);
+            t.async = !0;
+            t.src = v;
+            s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s)
+        }(window, document, 'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', '447045009168652');
+        fbq('track', 'PageView');
+    </script>
+    <noscript>
+   <img height="1" width="1" 
+  src="https://www.facebook.com/tr?id=447045009168652&ev=PageView
+  &noscript=1"/>
+  </noscript>
+    <!-- End Facebook Pixel Code -->
 </head>
 
 <body>
-  <div id="main">
-    <!-- This is where our React app will go -->
-  </div>
+    <div id="main">
+        <!-- This is where our React app will go -->
+    </div>
 </body>
 <script type="text/javascript">
-  CRISP_RUNTIME_CONFIG = {
-    locale: localStorage.getItem('appLanguage') || "EN"
-  };
-  window.$crisp = []; window.CRISP_WEBSITE_ID = "5d3e31bd-cc55-4d77-8911-067e559e4314"; (function () { d = document; s = d.createElement("script"); s.src = "https://client.crisp.chat/l.js"; s.async = 1; d.getElementsByTagName("head")[0].appendChild(s); })();</script>
+    CRISP_RUNTIME_CONFIG = {
+        locale: localStorage.getItem('appLanguage') || "EN"
+    };
+    window.$crisp = [];
+    window.CRISP_WEBSITE_ID = "5d3e31bd-cc55-4d77-8911-067e559e4314";
+    (function() {
+        d = document;
+        s = d.createElement("script");
+        s.src = "https://client.crisp.chat/l.js";
+        s.async = 1;
+        d.getElementsByTagName("head")[0].appendChild(s);
+    })();
+</script>
 
 </html>
