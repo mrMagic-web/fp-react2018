@@ -33,7 +33,7 @@ class Form extends React.Component {
   };
   onSubmit(e) {
     e.preventDefault();
-    this.validate(e);
+    // this.validate(e);
     setTimeout(() => {
       if (!this.state.error) {
         this.props.closeModal();
