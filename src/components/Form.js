@@ -17,7 +17,42 @@ class Form extends React.Component {
       [e.target.name]: e.target.value
     });
   };
-
+  validate = e => {
+		let isErr = false;
+		const errors = {};
+		this.setState({error: false})
+		if (!this.state.email.match('^[a-zA-Z0-9]+@[a-zA-Z0-9]+.[A-Za-z]+$')) { 
+			isErr = true;
+			errors.emailError = "That doesn't look like an e-mail";
+		} else {
+			errors.emailError = "";
+		}
+		if (!this.state.phone.match('\\(?\\d{3}\\)?[-\\/\\.\\s]?\\d{3}[-\\/\\.\\s]?')) { 
+			isErr = true;
+			errors.phoneError = "Wrong phone number format";
+		} else {
+			errors.phoneError = "";
+		}
+		if(this.state.name.length < 3) {
+			isErr = true;
+			errors.nameError = "User short";
+		} else {
+			errors.nameError = "";
+		}
+		if (isErr) {
+			this.setState({
+				...this.state,
+				...errors
+			})
+		} else {
+			this.setState({error: false})
+		}
+	}
+	change = e => {
+		this.setState({
+			[e.target.name]: e.target.value
+		})
+	}
   renderOrder = e => {
     const product = this.props.products[e];
     const back = imageUrl + "thumbs/" + product.id + "_sm.jpg";
@@ -33,7 +68,7 @@ class Form extends React.Component {
   };
   onSubmit(e) {
     e.preventDefault();
-    // this.validate(e);
+    this.validate(e);
     setTimeout(() => {
       if (!this.state.error) {
         this.props.closeModal();
