@@ -42,7 +42,8 @@
     "reactjs-dropdown-component": "^1.0.5",
     "redux-form": "^7.3.0",
     "slick-carousel": "^1.8.1",
-    "source-map": "^0.7.2"
+    "source-map": "^0.7.2",
+    "snyk": "^1.316.1"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -50,9 +51,12 @@
     "build": "react-scripts build",
     "eject": "react-scripts eject",
     "styles": "stylus -u autoprefixer-stylus ./src/css/style.styl -o ./src/css/style.css",
-    "styles:watch": "stylus -u autoprefixer-stylus -w ./src/css/style.styl -o ./src/css/style.css"
+    "styles:watch": "stylus -u autoprefixer-stylus -w ./src/css/style.styl -o ./src/css/style.css",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
   },
   "eslintConfig": {
     "extends": "./node_modules/react-scripts/.eslintrc"
-  }
+  },
+  "snyk": true
 }
