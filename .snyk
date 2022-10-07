@@ -1,0 +1,15 @@
+# Snyk (https://snyk.io) policy file, patches or ignores known vulnerabilities.
+version: v1.25.0
+ignore: {}
+# patches apply the minimum changes required to fix a vulnerability
+patch:
+  'npm:extend:20180424':
+    - re-base > firebase > @firebase/firestore > grpc > node-pre-gyp > request > extend:
+        patched: '2022-10-07T21:38:20.597Z'
+  SNYK-JS-LODASH-567746:
+    - react-redux > lodash:
+        patched: '2022-10-07T21:38:20.597Z'
+    - redux-form > lodash:
+        patched: '2022-10-07T21:38:20.597Z'
+    - re-base > firebase > @firebase/firestore > grpc > lodash:
+        patched: '2022-10-07T21:38:20.597Z'
