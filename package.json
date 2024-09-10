@@ -36,7 +36,7 @@
     "react-gtm-module": "^2.0.2",
     "react-redux": "^5.0.7",
     "react-responsive-modal": "^2.0.1",
-    "react-router": "4.0.0-alpha.4",
+    "react-router": "6.0.0",
     "react-slick": "^0.23.1",
     "react-tooltip": "^3.8.1",
     "reactjs-dropdown-component": "^1.0.5",
